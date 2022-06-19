@@ -1,0 +1,26 @@
+# japanese_12_key.dict.yaml
+# encoding: utf-8
+
+---
+name: japanese_12_key
+version: '0.1'
+
+use_preset_vocabulary: false
+import_tables:
+  - 'japanese.hiragana'
+  - 'japanese.katakana'
+  - 'japanese.edict'
+  - 'japanese.enamdict'
+  - 'japanese.mozc'
+  - 'japanese.half_width_kana'
+...
+
+↑	quqe
+↓	sita
+←	hidari
+→	migi
+×	batu
+♡	ha--to
+♤	supe--do
+♢	daqiya
+♧	kurabu

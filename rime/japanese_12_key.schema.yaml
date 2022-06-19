@@ -1,0 +1,263 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: japanese_12_key
+  name: 日本語12キー
+  version: '0.1'
+  author:
+    - "Windy_D <windy0deng@gmail.com>"
+
+switches:
+  #- name: ascii_mode
+  #  reset: 0
+  #  states: [ 和文, 西文 ]
+  - name: full_shape
+    reset: 1
+    states: [ 半角, 全角 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - lua_segmentor@japanese_segmentor
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+  filters:
+    #- simplifier
+    - uniquifier
+
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyz-_'
+  initials: 'qkstnhmyrwvgzdbplx'
+  delimiter: " '"
+  algebra:
+    - derive/xa/qa/
+    - derive/xi/qi/
+    - derive/xu/qu/
+    - derive/xe/qe/
+    - derive/xo/qo/
+    - derive/la/ya/
+    - derive/lu/yu/
+    - derive/lo/yo/
+    - derive/va/wa/
+    - derive/xx/tu/
+
+
+translator:
+  dictionary: japanese_12_key
+  preedit_format:
+    #あ
+    - xform/xa/ぁ/
+    - xform/xi/ぃ/
+    - xform/xu/ぅ/
+    - xform/vu/ゔ/
+    - xform/xe/ぇ/
+    - xform/xo/ぉ/
+    - xform/qa/あ/
+    - xform/qi/い/
+    - xform/qu/う/
+    - xform/qe/え/
+    - xform/qo/お/
+    #か
+    - xform/ga/が/
+    - xform/gi/ぎ/
+    - xform/gu/ぐ/
+    - xform/ge/げ/
+    - xform/go/ご/
+    - xform/ka/か/
+    - xform/ki/き/
+    - xform/ku/く/
+    - xform/ke/け/
+    - xform/ko/こ/
+    #さ
+    - xform/za/ざ/
+    - xform/zi/じ/
+    - xform/zu/ず/
+    - xform/ze/ぜ/
+    - xform/zo/ぞ/
+    - xform/sa/さ/
+    - xform/si/し/
+    - xform/su/す/
+    - xform/se/せ/
+    - xform/so/そ/
+    #た
+    - xform/da/だ/
+    - xform/di/ぢ/
+    - xform/du/づ/
+    - xform/de/で/
+    - xform/do/ど/
+    - xform/ta/た/
+    - xform/ti/ち/
+    - xform/tu/つ/
+    - xform/xx/っ/
+    - xform/te/て/
+    - xform/to/と/
+    #な
+    - xform/na/な/
+    - xform/ni/に/
+    - xform/nu/ぬ/
+    - xform/ne/ね/
+    - xform/no/の/
+    #は
+    - xform/ba/ば/
+    - xform/bi/び/
+    - xform/bu/ぶ/
+    - xform/be/べ/
+    - xform/bo/ぼ/
+    - xform/pa/ぱ/
+    - xform/pi/ぴ/
+    - xform/pu/ぷ/
+    - xform/pe/ぺ/
+    - xform/po/ぽ/
+    - xform/ha/は/
+    - xform/hi/ひ/
+    - xform/hu/ふ/
+    - xform/he/へ/
+    - xform/ho/ほ/
+    #ま
+    - xform/ma/ま/
+    - xform/mi/み/
+    - xform/mu/む/
+    - xform/me/め/
+    - xform/mo/も/
+    #や
+    - xform/ya/や/
+    - xform/yu/ゆ/
+    - xform/yo/よ/
+    - xform/la/ゃ/
+    - xform/lu/ゅ/
+    - xform/lo/ょ/
+    #ら
+    - xform/ra/ら/
+    - xform/ri/り/
+    - xform/ru/る/
+    - xform/re/れ/
+    - xform/ro/ろ/
+    #わ
+    - xform/wa/わ/
+    - xform/va/ゎ/
+    - xform/wo/を/
+    - xform/nn/ん/
+    #ー
+    - xform/--/ー/
+  comment_format:
+    #あ
+    - xform/xa/ぁ/
+    - xform/xi/ぃ/
+    - xform/xu/ぅ/
+    - xform/vu/ゔ/
+    - xform/xe/ぇ/
+    - xform/xo/ぉ/
+    - xform/qa/あ/
+    - xform/qi/い/
+    - xform/qu/う/
+    - xform/qe/え/
+    - xform/qo/お/
+    #か
+    - xform/ga/が/
+    - xform/gi/ぎ/
+    - xform/gu/ぐ/
+    - xform/ge/げ/
+    - xform/go/ご/
+    - xform/ka/か/
+    - xform/ki/き/
+    - xform/ku/く/
+    - xform/ke/け/
+    - xform/ko/こ/
+    #さ
+    - xform/za/ざ/
+    - xform/zi/じ/
+    - xform/zu/ず/
+    - xform/ze/ぜ/
+    - xform/zo/ぞ/
+    - xform/sa/さ/
+    - xform/si/し/
+    - xform/su/す/
+    - xform/se/せ/
+    - xform/so/そ/
+    #た
+    - xform/da/だ/
+    - xform/di/ぢ/
+    - xform/du/づ/
+    - xform/de/で/
+    - xform/do/ど/
+    - xform/ta/た/
+    - xform/ti/ち/
+    - xform/tu/つ/
+    - xform/xx/っ/
+    - xform/te/て/
+    - xform/to/と/
+    #な
+    - xform/na/な/
+    - xform/ni/に/
+    - xform/nu/ぬ/
+    - xform/ne/ね/
+    - xform/no/の/
+    #は
+    - xform/ba/ば/
+    - xform/bi/び/
+    - xform/bu/ぶ/
+    - xform/be/べ/
+    - xform/bo/ぼ/
+    - xform/pa/ぱ/
+    - xform/pi/ぴ/
+    - xform/pu/ぷ/
+    - xform/pe/ぺ/
+    - xform/po/ぽ/
+    - xform/ha/は/
+    - xform/hi/ひ/
+    - xform/hu/ふ/
+    - xform/he/へ/
+    - xform/ho/ほ/
+    #ま
+    - xform/ma/ま/
+    - xform/mi/み/
+    - xform/mu/む/
+    - xform/me/め/
+    - xform/mo/も/
+    #や
+    - xform/ya/や/
+    - xform/yu/ゆ/
+    - xform/yo/よ/
+    - xform/la/ゃ/
+    - xform/lu/ゅ/
+    - xform/lo/ょ/
+    #ら
+    - xform/ra/ら/
+    - xform/ri/り/
+    - xform/ru/る/
+    - xform/re/れ/
+    - xform/ro/ろ/
+    #わ
+    - xform/wa/わ/
+    - xform/va/ゎ/
+    - xform/wo/を/
+    - xform/nn/ん/
+    #ー
+    - xform/--/ー/
+
+punctuator:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+
+__patch:
+  # 用家自定义
+  - japanese_12_key.custom:/patch?
