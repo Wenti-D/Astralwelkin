@@ -1,0 +1,91 @@
+# double_pinyin_mspy.custom.yaml
+#
+# 补丁功能：
+#   将词库修改为朙月拼音扩充词库
+#   自定义标点符号
+#
+# 作者：Windy_D <windy0deng@gmail.com>
+#
+# 放入 RIME 的用户文件夹，重新部署即刻生效。
+# 建议配合作者制作的主题食用。
+#
+#
+# 注：
+#   本补丁适用于各种双拼方案（包括自然码双拼、智能ABC双拼、小鹤双拼、MSPY双拼）。
+#   只需将此 custom.yaml 的前面名字改为对应的输入方案名字，如 double_pinyin_abc.custom.yaml，
+#   然后放入用户文件夹重新部署即可。
+#   朙月拼音用户请使用 luna_pinyin.custom.yaml。
+#
+#
+# 附：
+#   双拼方案与其对应的 id 一览表：
+#
+#   输入方案      id
+#   自然码双拼    double_pinyin
+#   智能ABC双拼   double_pinyin_abc
+#   小鹤双拼      double_pinyin_flypy
+#   MSPY双拼      double_pinyin_mspy
+#
+
+patch:
+  "translator/dictionary": luna_pinyin.extended
+  punctuator:
+    full_shape:
+      ' ': { commit: '　' }
+      ',': { commit: ， }
+      '.': { commit: '.' }
+      '。': { commit: 。 }
+      '<': ＜
+      '>': ＞
+      '/': ／
+      '|': ｜
+      '\': ＼
+      '`' : ｀
+      '~' : ～
+      '@': ＠
+      '#': ＃
+      '%': ％
+      '$': '$'
+      '^' : { commit: …… }
+      '&' : ＆
+      '*': ＊
+      '(' : （
+      ')' : ）
+      '-' : －
+      '_' : ——
+      '+' : ＋
+      '=' : ＝
+      '[': 【
+      ']': 】
+      '{': ｛
+      '}': ｝
+
+    half_shape:
+      ',': { commit: ， }
+      '.': { commit: 。 }
+      '<': '<'
+      '>': '>'
+      '?': { commit: ？ }
+      ';': { commit: ； }
+      ':': { commit: ： }
+      '''': { pair: [ '‘', '’' ] }
+      '"': { pair: [ '“', '”' ] }
+      '\': '\'
+      '|': '|'
+      '`': '`'
+      '~': '~'
+      '!': { commit: ！ }
+      '@': '@'
+      '#': '#'
+      '%': '%'
+      '$': '$'
+      '^': '^'
+      '&': '&'
+      '*': '*'
+      '(': '('
+      ')': ')'
+      '_': '_'
+      '[': '['
+      ']': ']'
+      '{': '{'
+      '}': '}'

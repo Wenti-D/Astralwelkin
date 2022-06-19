@@ -1,0 +1,1514 @@
+# Trime custom style settings
+# encoding: utf-8
+
+config_version: "20220619@3.2.6"  #日期@Trime版本
+name: 星天                        #方案名称
+author: 'Windy_D'                 #作者信息
+
+height:
+  1: &36_key_height 42
+  2: &symbol_key_height 36
+  3: &sub_key_height 28
+  4: &hor_gap 4
+  5: &36_key_vert_gap 6
+  6: &ipa_key_height 36
+  7: &ipa_key_width 8.33333333333333
+  12: &ipa_2_key_width 16.666666666666666
+  13: &ipa_3_key_width 25
+  8: &jpn_key_height 48
+  9: &26_key_height 44
+  10: &26_key_vert_gap 9
+  11: &ipa_key_vert_gap 2
+
+round_corner:
+  1: &main_round 12
+  2: &sub_round 6
+
+#样式
+style:
+  #功能设定
+  auto_caps: false              #自动句首大写: true|false|ascii
+  candidate_use_cursor: true    #高亮候选项
+  comment_on_top: true          #编码提示在上方/右侧
+  horizontal: true              #水平模式
+  keyboards:                    #用到的键盘
+    - .default
+    - default
+    - letter
+    - double_pinyin_mspy
+    - bopomofo
+    - japanese_12_key
+    - japanese_num_12_key
+    - basic_symbol
+    - math_symbol
+    - Greek
+    - Greek_symbol
+    - Cyrillic
+    - Cyrillic_symbol
+    - IPA1
+    - IPA2
+    - IPA3
+    - IPA_symbol_1
+    - IPA_symbol_2
+  proximity_correction: true    #避免按到缝隙
+  reset_ascii_mode: true        #自动转回中文
+  latin_locale: en_US           #这些
+  locale: zh_CN                 #没什么
+  speech_opencc_config: none    #好说的
+  #字体
+  text_font: NotoSansCJKsc-Regular.otf          #打出编码字体
+  label_font: NotoSansCJKsc-Regular.otf         #悬浮窗序号字体
+  candidate_font: NotoSansCJKsc-Regular.otf     #候选项字体
+  comment_font: NotoSansCJKsc-Regular.otf       #候选项注释字体
+  hanb_font: simsunb.ttf                        #后备字体
+  latin_font: NotoSansCJKsc-Regular.otf         #候选项及注释的拉丁字体
+  key_font: NotoSansCJKsc-Regular.otf           #按键字体
+  symbol_font: NotoSansCJKsc-Regular.otf        #按键注释字体
+  preview_font: NotoSansCJKsc-Regular.otf       #按键气泡字体
+  #尺寸
+  text_size: 14                   #编码字号
+  label_text_size: 21             #候选序号字号
+  candidate_padding: 8            #候选项内边距
+  candidate_spacing: 1            #候选项间隔
+  candidate_text_size: 21         #候选项字号
+  candidate_view_height: 24       #候选区高度
+  comment_text_size: 11           #候选项注释字号
+  comment_height: 13              #注释区高度
+  key_height: *36_key_height      #默认键高
+  key_width: 10                   #默认键宽（占屏宽百分比）
+  key_text_size: 19               #单字符按键字号
+  key_long_text_size: 16          #多字符按键字号
+  symbol_text_size: 8             #长按标签字号
+  round_corner: *main_round       #默认按键圆角
+  preview_height: 56              #按键气泡高度
+  preview_offset: -6              #按键气泡纵向偏移（下正上负）
+  preview_text_size: 26           #气泡字号
+  shadow_radius: 2                #按键字符阴影半径
+  horizontal_gap: *hor_gap        #按键默认水平间距
+  vertical_gap: *36_key_vert_gap  #按键默认竖直间距
+  vertical_correction: -6         #触摸位置修正（上正下负）
+  keyboard_padding: 5             #竖屏下键盘左右到屏幕左右间距
+  keyboard_padding_bottom: 10     #竖屏下键盘下端到屏幕下缘间距
+  keyboard_padding_land: 50       #横屏下键盘左右到屏幕左右间距
+  keyboard_padding_land_bottom: 5 #横屏下键盘下端到屏幕下缘间距
+  keyboard_height_land: 160       #横屏下键盘锁定高度
+  #悬浮窗口
+  layout:
+    position: fixed             #候选窗口位置
+    min_length: 7               #进窗最小词长
+    max_length: 16              #超长换行极限
+    sticky_lines: 1             #固顶行数
+    max_entries: 5              #最多进窗数目
+    all_phrases: false          #显示所有长词
+    border: 0                   #候选窗口边框
+    max_width: 360              #换行极限宽度
+    min_width: 0                #窗口最小宽度
+    margin_x: 5                 #水平边距
+    margin_y: 5                 #竖直边距
+    line_spacing: 0             #候选词行间距
+    line_spacing_multiplier: 1  #行间距倍率
+    spacing: 1                  #上下偏移量（上正下负，但 position 设置为 top_xxx 则相反）
+    round_corner: *sub_round    #窗口圆角
+    alpha: 0xff                 #透明度
+    movable: false              #是否可移动
+  window:
+    - {start: "", composition: "%s", end: "", letter_spacing: 0}   #letter_spacing需要Android5.0
+    - {start: "\n", label: "%s.", candidate: "%s", comment: "%s", end: "", sep: "☁️️"}
+      
+#备用颜色，摆烂
+fallback_colors:
+  candidate_text_color: text_color
+  comment_text_color: candidate_text_color
+  border_color: back_color
+  candidate_separator_color: border_color
+  hilited_text_color: text_color
+  hilited_back_color: back_color
+  hilited_candidate_text_color: hilited_text_color
+  hilited_candidate_back_color: hilited_back_color
+  hilited_comment_text_color: comment_text_color
+  text_back_color: back_color
+  hilited_key_back_color: hilited_candidate_back_color
+  hilited_key_text_color: hilited_candidate_text_color
+  hilited_key_symbol_color: hilited_comment_text_color
+  hilited_off_key_back_color: hilited_key_back_color
+  hilited_on_key_back_color: hilited_key_back_color
+  hilited_off_key_text_color: hilited_key_text_color
+  hilited_on_key_text_color: hilited_key_text_color
+  key_back_color: back_color
+  key_border_color: border_color
+  key_text_color: candidate_text_color
+  key_symbol_color: comment_text_color
+  keyboard_back_color: border_color
+  label_color: candidate_text_color
+  off_key_back_color: key_back_color
+  off_key_text_color: key_text_color
+  on_key_back_color: hilited_key_back_color
+  on_key_text_color: hilited_key_text_color
+  preview_back_color: key_text_color
+  preview_text_color: key_back_color
+  shadow_color: key_back_color
+
+#一些颜色
+colors:
+  1: &pure_black 0x000000                   #只是纯黑色
+  2: &pure_white 0xffffff                   #只是纯白色
+  #暗色
+  3: &dark_main_color 0x030d1c                    #作为按键背景的暗蓝色
+  4: &dark_bg_color 0x131313                      #背景的背景的暗灰色
+  5: &dark_border_color 0x052a61                  #作为边框的稍亮一点点的蓝色
+  6: &dark_main_text_color 0xfffbe2               #作为字符主要颜色的浅黄色
+  7: &dark_sub_candidate_color 0xd2cbb2           #作为非高亮候选的暗浅黄色
+  8: &dark_code_text_color 0xfdf793               #已解析的编码的黄色
+  9: &dark_code_unparsed_color 0xfb4187           #未解析编码的红色
+  10: &dark_comment_color 0xfee8ad                #高亮注释颜色
+  11: &dark_sub_comment_color 0xd9c693            #其他注释颜色
+  12: &dark_func_key_bg_color 0x10052b            #功能键背景色
+  13: &dark_func_key_text_color 0xffc391          #功能键文本色
+  14: &dark_func_key_pressed_bg_color 0x261c40    #功能键按下时背景色
+  15: &dark_func_key_pressed_text_color 0xffddc2  #功能键按下时文本色
+  16: &dark_shift_lock_bg_color 0x14254a          #Shift锁定时背景颜色
+  17: &dark_shift_lock_text_color 0xfff23b        #Shift锁定时文字颜色
+  18: &dark_shift_lock_pressed_bg_color 0x140e36  #Shift锁定时按下的背景颜色
+  19: &dark_enter_bg_color 0x024394               #回车键颜色
+  20: &dark_enter_text_color 0xc0e8ff             #回车键文字颜色
+  21: &dark_enter_pressed_bg_color 0x01316b       #回车键按下时颜色
+  22: &dark_enter_pressed_text_color 0x86a2b3     #回车键按下时文字颜色
+  23: &dark_key_hint_color 0x807e71               #按键小字颜色
+  #亮色
+  24: &light_main_color 0xffffff                    #作为按键背景的白色
+  25: &light_bg_color 0xf1f1f1                      #背景的背景的浅灰色
+  26: &light_border_color 0xffedb1                  #作为边框的浅黄色
+  27: &light_main_text_color 0x000000               #作为字符主要颜色的黑色
+  28: &light_sub_candidate_color 0x5b5b5b           #作为非高亮候选的暗灰色
+  29: &light_code_text_color 0x004db5               #已解析的编码的蓝色
+  30: &light_code_unparsed_color 0xcf3a00           #未解析编码的红色
+  31: &light_comment_color 0x003595                 #高亮注释颜色
+  32: &light_sub_comment_color 0x6d91d5             #其他注释颜色
+  33: &light_func_key_bg_color 0xdddddd             #功能键背景色
+  34: &light_func_key_text_color 0xe15500           #功能键文本色
+  35: &light_func_key_pressed_bg_color 0xd2d2d2     #功能键按下时背景色
+  36: &light_func_key_pressed_text_color 0xb55101   #功能键按下时文本色
+  37: &light_shift_lock_bg_color 0x5c9abc           #Shift锁定时背景颜色
+  38: &light_shift_lock_text_color 0xffe818         #Shift锁定时文字颜色
+  39: &light_shift_lock_pressed_bg_color 0x558aa6   #Shift锁定时按下的背景颜色
+  40: &light_shift_lock_pressed_text_color 0xfff7b3 #Shift锁定时按下的文字颜色
+  41: &light_enter_bg_color 0x2682cd                #回车键颜色
+  42: &light_enter_text_color 0xbefffb              #回车键文字颜色
+  43: &light_enter_pressed_bg_color 0x0b6db3        #回车键按下时颜色
+  44: &light_enter_pressed_text_color 0xb6edee      #回车键按下时文字颜色
+  45: &light_key_hint_color 0x0041ad                #按键小字颜色
+
+preset_color_schemes:
+  default:
+    name: "星天"
+    author: "Windy_D"
+    #悬浮窗颜色
+    border_color: *dark_border_color                        #悬浮窗边框
+    label_color: *dark_sub_candidate_color                  #编码高亮
+    hilited_text_color: *dark_code_text_color               #已解析编码
+    text_color: *dark_code_unparsed_color                   #未解析/无法解析的编码
+    hilited_back_color: *dark_main_color                    #已解析编码的背景
+    text_back_color: *dark_bg_color                         #未解析编码的背景
+    #候选区颜色
+    back_color: *dark_bg_color                              #候选区背景？
+    candidate_background : *dark_bg_color                   #候选区背景？
+    hilited_candidate_back_color: *dark_main_color          #候选区高亮背景
+    candidate_separator_color: *pure_black                  #候选项分割线
+    candidate_text_color: *dark_sub_candidate_color         #其他候选文本
+    hilited_candidate_text_color: *dark_main_text_color     #候选高亮文本
+    comment_text_color: *dark_sub_comment_color             #候选项注释文本
+    hilited_comment_text_color: *dark_comment_color         #高亮候选项注释文本
+    #键盘颜色
+    key_back_color: *dark_main_color                              #按键背景色
+    hilited_key_back_color: *dark_border_color                    #按键按下时背景色
+    key_text_color: *dark_main_text_color                         #按键字符颜色
+    key_symbol_color: *dark_key_hint_color                        #按键小字颜色
+    hilited_key_symbol_color: *pure_white                         #按下时小字颜色
+    preview_back_color: *dark_border_color                        #气泡背景色
+    preview_text_color: *pure_white                               #气泡字符颜色
+    keyboard_back_color: *dark_bg_color                           #键盘整体背景色
+    key_border_color: *dark_border_color                          #按键边框颜色
+    off_key_back_color: *dark_func_key_bg_color                   #功能键背景色
+    off_key_text_color: *dark_func_key_text_color                 #功能键文本色
+    hilited_off_key_back_color: *dark_func_key_pressed_bg_color   #功能键按下时背景色
+    hilited_off_key_text_color: *dark_func_key_pressed_text_color #功能键按下时文本色
+    on_key_back_color: *dark_shift_lock_bg_color                  #Shift锁定时背景色
+    hilited_on_key_back_color: *dark_shift_lock_pressed_bg_color  #Shift锁定时按下的背景颜色
+    on_key_text_color: *dark_shift_lock_text_color                #Shift锁定时文字颜色
+    hilited_on_key_text_color: *pure_white                        #Shift锁定时按下的文字颜色
+    enter_bg_color: *dark_enter_bg_color
+    enter_text_color: *dark_enter_text_color
+    enter_pressed_bg_color: *dark_enter_pressed_bg_color
+    enter_pressed_text_color: *dark_enter_pressed_text_color
+    liquid_keyboard_background: *dark_bg_color
+    long_text_back_color: *dark_main_color
+
+  white_night:
+    name: "白夜"
+    author: "Windy_D"
+    #悬浮窗颜色
+    border_color: *light_border_color                        #悬浮窗边框
+    label_color: *light_sub_candidate_color                  #编码高亮
+    hilited_text_color: *light_code_text_color               #已解析编码
+    text_color: *light_code_unparsed_color                   #未解析/无法解析的编码
+    hilited_back_color: *light_bg_color                      #已解析编码的背景
+    text_back_color: *light_bg_color                         #未解析编码的背景
+    ##候选区颜色
+    back_color: *light_bg_color                              #候选区背景
+    candidate_background : *light_bg_color                   #候选区背景？
+    hilited_candidate_back_color: *light_main_color          #候选区高亮背景
+    candidate_separator_color: *pure_black                   #候选项分割线
+    candidate_text_color: *light_sub_candidate_color         #其他候选文本
+    hilited_candidate_text_color: *light_main_text_color     #候选高亮文本
+    comment_text_color: *light_sub_comment_color             #候选项注释文本
+    hilited_comment_text_color: *light_comment_color         #高亮候选项注释文本
+    ##键盘颜色
+    key_back_color: *light_main_color                               #按键背景色
+    hilited_key_back_color: *light_border_color                     #按键按下时背景色
+    key_text_color: *light_main_text_color                          #按键字符颜色
+    key_symbol_color: *light_key_hint_color                         #按键小字颜色
+    hilited_key_symbol_color: *pure_black                           #按下时小字颜色
+    preview_back_color: *light_border_color                         #气泡背景色
+    preview_text_color: *pure_black                                 #气泡字符颜色
+    keyboard_back_color: *light_bg_color                            #键盘整体背景色
+    key_border_color: *light_border_color                           #按键边框颜色
+    off_key_back_color: *light_func_key_bg_color                    #功能键背景色
+    off_key_text_color: *light_func_key_text_color                  #功能键文本色
+    hilited_off_key_back_color: *light_func_key_pressed_bg_color    #功能键按下时背景色
+    hilited_off_key_text_color: *light_func_key_pressed_text_color  #功能键按下时文本色
+    on_key_back_color: *light_shift_lock_bg_color                   #Shift锁定时背景色
+    hilited_on_key_back_color: *light_shift_lock_pressed_bg_color   #Shift锁定时按下的背景颜色
+    on_key_text_color: *light_shift_lock_text_color                 #Shift锁定时文字颜色
+    hilited_on_key_text_color: *light_shift_lock_pressed_text_color #Shift锁定时按下的文字颜色
+    enter_bg_color: *light_enter_bg_color
+    enter_text_color: *light_enter_text_color
+    enter_pressed_bg_color: *light_enter_pressed_bg_color
+    enter_pressed_text_color: *light_enter_pressed_text_color
+    liquid_keyboard_background: *light_bg_color
+    long_text_back_color: *light_main_color
+    
+android_keys:
+  __include: trime:/android_keys
+
+preset_keys:
+  # 安卓
+  BRIGHTNESS_DOWN: {label: 亮度-, send: BRIGHTNESS_DOWN}
+  BRIGHTNESS_UP: {label: 亮度+, send: BRIGHTNESS_UP}
+  CALCULATOR: {label: 计算机, send: CALCULATOR}
+  CALENDAR: {label: 日历, send: CALENDAR}
+  CONTACTS: {label: 电话簿, send: CONTACTS}
+  ENVELOPE: {label: 信箱, send: ENVELOPE}
+  EXPLORER: {label: 浏览器, send: EXPLORER}
+  MUSIC: {label: 音乐, send: MUSIC}
+  POWER: {label: 电源, send: POWER}
+  SEARCH: {label: 搜索, send: Find}
+  SLEEP: {label: 休眠, send: SLEEP}
+  VOICE_ASSIST: {label: 语音, send: VOICE_ASSIST}
+  VOLUME_DOWN: {label: 音量-, send: VOLUME_DOWN}
+  VOLUME_UP: {label: 音量+, send: VOLUME_UP}
+  VOLUME_MUTE: {label: 静音, send: VOLUME_MUTE}
+  # 编辑
+  Shift_L: {label: '⇧', key_text_size: 26, send: Shift_L, shift_lock: long}
+  Return: {label: '↵', repeatable: true, text: "{Return}{Eisu_toggle}"}
+  Hide: {label: 隐藏, send: BACK}
+  BackSpace: {label: '⇦', repeatable: true, send: BackSpace}
+  space: {label: '⎵', repeatable: true, functional: false, send: space}
+  Escape: {label: Esc, send: Escape}
+  Home: {label: Home, send: Home}
+  Insert: {label: Insert, send: Insert}
+  Delete: {label: Del, send: Delete}
+  End: {label: Del, send: End}
+  Page_Up: {label: PgUp, send: Page_Up}
+  Page_Down: {label: PgDn, send: Page_Down}
+  Left: {label: '←', send: Left}
+  Down: {label: '↓', send: Down}
+  Up: {label: '↑', send: Up}
+  Right: {label: '→', send: Right}
+  select_all: {label: 全选, send: Control+a}
+  Clear: {label: 清除, text: "{Control+a}{BackSpace}"} #全选并删除
+  cut: {label: 剪切, send: Control+x}
+  cut_all: {label: 全挪, text: "{Control+a}{Control+x}"} #全选并剪切
+  copy: {label: 复制, send: Control+c}
+  copy_all: {label: 全誊, text: "{Control+a}{Control+c}"} #全选并复制
+  paste: {label: 粘贴, send: Control+v}
+  paste_text: {label: 粘贴文本, send: Control+Shift+Alt+v} #>=Android 6.0
+  share_text: {label: 分享文本, send: Control+Alt+s} #>=Android 6.0
+  redo: {label: 重做, send: Control+y} #>=Android 6.0
+  undo: {label: 撤销, send: Control+z} #>=Android 6.0
+  # rime组合键
+  F4: {label: 方案选单, send: F4}
+  BackToPreviousSyllable: {label: 删音节, send: Control+BackSpace}
+  CommitRawInput: {label: 编码, send: Control+Return}
+  CommitScriptText: {label: 编码, send: Shift+Return}
+  CommitComment: {label: 编码, send: Control+Shift+Return}
+  DeleteCandidate: {label: 删词, send: Control+Delete}
+  # rime状态
+  Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中文, 西文 ]}
+  Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半角, 全角 ]}
+  Henkan: {toggle: simplification, send: Mode_switch, states: [ 汉字, 汉字 ]}
+  Charset_switch: {toggle: extended_charset, send: Mode_switch, states: [ 常用, 增广 ]}
+  Punct_switch: {toggle: ascii_punct, send: Mode_switch, states: [ 。，, ．， ]}
+  # trime设定
+  IME_switch: {label: 切换, send: LANGUAGE_SWITCH} #弹出对话框选择输入法
+  IME_last: {label: 上一输入法, send: LANGUAGE_SWITCH, select: .last} #直接切换到上一输入法
+  IME_next: {label: 下一输入法, send: LANGUAGE_SWITCH, select: .next} #直接切换到下一输入法
+  Keyboard_letter: {label: 字母, send: Eisu_toggle, select: default}
+  Keyboard_default: {label: 返回, send: Eisu_toggle, select: .default}
+  Keyboard_switch: {label: 键盘, send: Eisu_toggle, select: .next}
+  Schema_switch: {label: 下一方案, send: Control+Shift+1}
+  Color_switch: {label: 配色, send: PROG_RED}
+  Help: {label: 说明, send: Help}
+  Info: {label: 关于, send: INFO}
+  Menu: {label: ⌨, send: Menu}
+  Settings: {label: 设定, send: SETTINGS}
+  Color_settings: {label: 配色, send: SETTINGS, option: "color"}
+  Theme_settings: {label: 主题, send: SETTINGS, option: "theme"}
+  Schema_settings: {label: 方案, send: SETTINGS, option: "schema"}
+  Candidate_switch: {toggle: _hide_candidate, send: Mode_switch, states: [有候选, 无候选]}
+  Comment_switch: {toggle: _hide_comment, send: Mode_switch, states: [有注释, 无注释]}
+  Hint_switch: {toggle: _hide_key_hint, send: Mode_switch, states: [有助记, 无助记]}
+  # trime命令
+  Date: {label: 日期, command: date, option: "yyyy-MM-dd"}
+  ChineseDate: {label: 农历, command: date, option: "zh_CN@calendar=chinese"} #农历等日期(>=Android 7.0)：date 语言@calendar=历法 格式。具体参见https://developer.android.com/reference/android/icu/util/Calendar.html
+  Time: {label: 时间, command: date, option: "HH:mm:ss"} #时间： date 格式
+  TrimeApp: {label: 同文, command: run, option: "com.osfans.trime"} #运行程序: run 包名
+  TrimeCmp: {label: 同文组件, command: run, option: "com.osfans.trime/.Pref"} #运行程序指定组件: run 包名/组件名
+  Homepage: {label: 同文主页, command: run, option: "https://github.com/osfans/trime"} #查看网页: run 网址
+  CommitHomepage: {label: 同文网址, commit: https://github.com/osfans/trime} #直接上屏
+  Wiki: {label: 维基, command: run, option: "https://zh.wikipedia.org/wiki/%s"} #搜索网页: %s或者%1$s为当前字符
+  Google: {label: 谷歌, command: run, option: "https://www.google.com/search?q=%s"} #搜索网页: %s或者%1$s为当前字符
+  MoeDict: {label: 萌典, command: run, option: "https://www.moedict.tw/%3$s"} #搜索网页: %3$s为光标前字符
+  Baidu: {label: 百度搜索, command: run, option: "https://www.baidu.com/s?wd=%4$s"} #搜索网页: %4$s为光标前所有字符
+  Zdic: {label: 汉典, command: run, option: "http://www.zdic.net/sousuo/?q=%1$s"} #搜索网页: %s或者%1$s为当前字符
+  Zdic2: {label: 汉典, command: run, option: "http://www.zdic.net/sousuo/?q=%2$s"} #搜索网页: %2$s为当前输入的编码
+  WebSearch: {label: 搜索网页, command: web_search, option: "%4$s"} #搜索，其他view、dial、edit、search等intent，参考安卓的intent文档：https://developer.android.com/reference/android/content/Intent.html
+  Search: {label: 搜索, command: search, option: "%1$s"} #搜索短信、字典等
+  Share: {label: 分享, command: send, option: "%2$s"} #分享指定文本: %s或者%1$s为当前字符
+  Deploy: {label: 部署, command: broadcast, option: "com.osfans.trime.deploy"}
+  Sync: {label: 同步, command: broadcast, option: "com.osfans.trime.sync"}
+  #日文12键用
+  Transform: {text: "_", label: '゛゜ぁ'}
+  JapaneseBackSpace: {label: '⇦', repeatable: true, text: "{BackSpace}{BackSpace}"}
+  JapaneseNum: {label: '☆123', send: Eisu_toggle, select: japanese_num_12_key}
+  JapaneseNumBracket: {label: '()[]', text: '(', functional: false}
+  JapaneseNumComma: {label: ',.-/', text: ',', functional: false}
+  JapaneseDefault: {label: 'あいう', send: Eisu_toggle, select: japanese_12_key}
+  #自定义键盘
+  Nothing: {label: '摆烂', send: ''}  #当还没想好放什么的时候就放这个吧
+  Pigeon: {label: '鸽了', send: ''}   #或者这个也行
+  Keyboard_basic_symbol: {label: '+★✓', send: Eisu_toggle, select: basic_symbol}
+  Extra_keyboard: {label: 'αбʃ', send: Eisu_toggle, select: Greek}
+  Keyboard_math_symbol: {label: 'Σ∫∂', send: Eisu_toggle, select: math_symbol}
+  Keyboard_Greek: {label: 'αβγ', send: Eisu_toggle, select: Greek}
+  Keyboard_Greek_symbol: {label: '+★✓', send: Eisu_toggle, select: Greek_symbol}
+  Keyboard_Cyrillic: {label: 'абг', send: Eisu_toggle, select: Cyrillic}
+  Keyboard_Cyrillic_symbol: {label: '+★✓', send: Eisu_toggle, select: Cyrillic_symbol}
+  Keyboard_IPA: {label: 'ɑɔə', send: Eisu_toggle, select: IPA1}
+  Keyboard_Greek_Selected: {label: 'αβγ', send: ''}
+  Keyboard_Cyrillic_Selected: {label: 'абг', send: ''}
+  Keyboard_IPA_Selected: {label: 'ɑɔə', send: ''}
+  Keyboard_IPA1: {label: '3/3', send: Eisu_toggle, select: IPA1}
+  Keyboard_IPA2: {label: '1/3', send: Eisu_toggle, select: IPA2}
+  Keyboard_IPA3: {label: '2/3', send: Eisu_toggle, select: IPA3}
+  Keyboard_IPA_symbol_1: {label: '/ [ {', send: Eisu_toggle, select: IPA_symbol_1}
+  Keyboard_IPA_symbol_2: {label: '◌̥◌ʰ', send: Eisu_toggle, select: IPA_symbol_2}
+  IPA_exhigh: {label: '◌̋', text: "̋"}
+  IPA_high: {label: '◌́', text: "́"}
+  IPA_mid: {label: '◌̄', text: "̄"}
+  IPA_low: {label: '◌̀', text: "̀"}
+  IPA_exlow: {label: '◌̏', text: "̏"}
+  IPA_rising: {label: '◌̌', text: "̌"}
+  IPA_falling: {label: '◌̂', text: "̂"}
+  IPA_high_rising: {label: '◌᷄', text: "᷄"}
+  IPA_low_rising: {label: '◌᷅', text: "᷅"}
+  IPA_rising_falling: {label: '◌᷈', text: "᷈"}
+  IPA_aspirated: {label: '◌ʰ', text: 'ʰ', functional: false}
+  IPA_glottalized: {label: '◌ˀ', text: 'ˀ', functional: false}
+  IPA_nasalized_glottalized: {label: '◌̃ˀ', text: '̃ˀ', functional: false}
+  IPA_voiceless_below: {label: '◌̥', text: '̥', functional: false}
+  IPA_ejective: {label: '◌ʼ', text: 'ʼ', functional: false}
+  IPA_extra_short: {label: '◌̆', text: '̆', functional: false}
+  IPA_raised: {label: '◌̝', text: '̝', functional: false}
+  IPA_raised_side: {label: '◌˔', text: '˔', functional: false}
+  IPA_more_rounded_below: {label: '◌̹', text: '̹', functional: false}
+  IPA_more_rounded_above: {label: '◌͗', text: '͗', functional: false}
+  IPA_fronted: {label: '◌̟', text: '̟', functional: false}
+  IPA_fronted_side: {label: '◌˖', text: '˖', functional: false}
+  IPA_nasal_release: {label: '◌ⁿ', text: 'ⁿ', functional: false}
+  IPA_lateral_release: {label: '◌ˡ', text: 'ˡ', functional: false}
+  IPA_no_audible_release: {label: '◌̚', text: '̄', functional: false}
+  IPA_mid_central_vowel_release: {label: '◌ᵊ', text: 'ᵊ', functional: false}
+  IPA_voiceless_dental_fricative_release: {label: '◌ᶿ', text: 'ᶿ', functional: false}
+  IPA_voiceless_velar_fricative_release: {label: '◌ˣ', text: 'ˣ', functional: false}
+  IPA_syllabic_below: {label: '◌̩', text: '̩', functional: false}
+  IPA_syllabic_above: {label: '◌̍', text: '̍', functional: false}
+  IPA_non_syllabic_below: {label: '◌̯', text: '̯', functional: false}
+  IPA_non_syllabic_above: {label: '◌̑', text: '̑', functional: false}
+  IPA_advanced_tongue_root: {label: '◌̘', text: '̘', functional: false}
+  IPA_retracted_tongue_root: {label: '◌̙', text: '̙', functional: false}
+  IPA_centralized: {label: '◌̈', text: '̈', functional: false}
+  IPA_mid-centralized: {label: '◌̽', text: '̽', functional: false}
+  IPA_nasalized: {label: '◌̃', text: '̃', functional: false}
+  IPA_dental_below: {label: '◌̪', text: '̪', functional: false}
+  IPA_dental_above: {label: '◌͆', text: '͆', functional: false}
+  IPA_labialized: {label: '◌ʷ', text: 'ʷ', functional: false}
+  IPA_linguolabial: {label: '◌̼', text: '̼', functional: false}
+  IPA_palatalized: {label: '◌ʲ', text: 'ʲ', functional: false}
+  IPA_velarized: {label: '◌ˠ', text: 'ˠ', functional: false}
+  IPA_pharyngealized: {label: '◌ˤ', text: 'ˤ', functional: false}
+  IPA_velarized_or_pharyngealized: {label: '◌̴', text: '̴', functional: false}
+  IPA_voiceless_above: {label: '◌̊', text: '̊', functional: false}
+  IPA_voiced: {label: '◌̬', text: '̬', functional: false}
+  IPA_breathy_voiced: {label: '◌̤', text: '̤', functional: false}
+  IPA_creaky_voiced: {label: '◌̰', text: '̰', functional: false}
+  IPA_rhoticity: {label: '◌˞', text: '˞', functional: false}
+  IPA_tie_bar_above: {label: '◌͡◌', text: '͡', functional: false}
+  IPA_tie_bar_below: {label: '◌͜◌', text: '͜', functional: false}
+  Keyboard_clipboard: {label: '剪贴板', send: function, command: liquid_keyboard, option: '剪贴板'}
+
+liquid_keyboard:
+  author: 'Windy_D'
+  row: 6              #竖屏每屏最多按键行数
+  row_land: 4         #横屏每屏最多按键行数
+  key_height: 44      #竖屏按键高度
+  key_height_land: 36 #横屏按键高度
+  single_width: 60    #single类型的按键宽度
+  vertical_gap: 4     #纵向按键间隙
+  margin_x: 2         #横向按键间隙的一半
+  keyboards:
+    - exit
+    - clipboard
+  clipboard:
+    type: CLIPBOARD
+    name: 剪贴板
+  exit:
+    name: 返回
+    type: NO_KEY
+    keys: EXIT
+
+#键盘布局
+preset_keyboards:
+  default:
+    name: 普通36键
+    author: 'Windy_D'
+    ascii_mode: 0
+    width: 10
+    #height默认，不写
+    key_text_offset_y: -.6    #按键文本偏移（下正上负）
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: '1', long_click: '¹', swipe_up: '¹', swipe_down: '₁', hint: '₁'}
+      - {click: '2', long_click: '²', swipe_up: '²', swipe_down: '₂', hint: '₂'}
+      - {click: '3', long_click: '³', swipe_up: '³', swipe_down: '₃', hint: '₃'}
+      - {click: '4', long_click: '⁴', swipe_up: '⁴', swipe_down: '₄', hint: '₄'}
+      - {click: '5', long_click: '⁵', swipe_up: '⁵', swipe_down: '₅', hint: '₅'}
+      - {click: '6', long_click: '⁶', swipe_up: '⁶', swipe_down: '₆', hint: '₆'}
+      - {click: '7', long_click: '⁷', swipe_up: '⁷', swipe_down: '₇', hint: '₇'}
+      - {click: '8', long_click: '⁸', swipe_up: '⁸', swipe_down: '₈', hint: '₈'}
+      - {click: '9', long_click: '⁹', swipe_up: '⁹', swipe_down: '₉', hint: '₉'}
+      - {click: '0', long_click: '⁰', swipe_up: '⁰', swipe_down: '₀', hint: '₀'}
+      #第二行
+      - {click: 'q', long_click: '`'}
+      - {click: 'w', long_click: '|', swipe_left: '<', swipe_right: '>', hint: '<   >'}
+      - {click: 'e', long_click: '@', swipe_left: '⟨', swipe_right: '⟩', hint: '⟨   ⟩'}
+      - {click: 'r', long_click: '^'}
+      - {click: 't', long_click: '·'}
+      - {click: 'y', long_click: '*', swipe_left: '/', swipe_right: '\', hint: '/   \'}
+      - {click: 'u', long_click: '+', swipe_left: '{', swipe_right: '}', hint: '{   }'}
+      - {click: 'i', long_click: '×', swipe_left: '[', swipe_right: ']', hint: '[   ]'}
+      - {click: 'o', long_click: '=', swipe_left: '(', swipe_right: ')', hint: '(   )'}
+      - {click: 'p', long_click: '、'}
+      #第三行
+      - {width: 5}
+      - {click: 'a', long_click: 'select_all'}
+      - {click: 's', long_click: '#', swipe_left: '℃', swipe_right: '℉', hint: '℃   ℉'}
+      - {click: 'd', long_click: '$', swipe_left: '¢', swipe_right: '€', hint: '¢   €'}
+      - {click: 'f', long_click: '¥', swipe_left: '£', swipe_right: '₿', hint: '£   ₿'}
+      - {click: 'g', long_click: '_', swipe_left: '〈', swipe_right: '〉', hint: '〈   〉'}
+      - {click: 'h', long_click: '——', swipe_left: '『', swipe_right: '』', hint: '『   』'}
+      - {click: 'j', long_click: '-', swipe_left: '《', swipe_right: '》', hint: '《   》'}
+      - {click: 'k', long_click: '÷', swipe_left: '「', swipe_right: '」', hint: '「   」'}
+      - {click: 'l', long_click: '~', swipe_left: '（', swipe_right: '）', hint: '（   ）'}
+      - {width: 5}
+      #第四行
+      - {click: Shift_L, width: 15, key_text_offset_y: 0}
+      - {click: 'z', long_click: '^_^'}
+      - {click: 'x', long_click: cut}
+      - {click: 'c', long_click: copy}
+      - {click: 'v', long_click: paste, swipe_down: Keyboard_clipboard, hint: '剪贴板'}
+      - {click: 'b', long_click: '&', swipe_left: "'", swipe_right: '"', hint: "'   \""}
+      - {click: 'n', long_click: '%', swipe_left: ';', swipe_right: ':', hint: ';   :'}
+      - {click: 'm', long_click: '¿', swipe_left: '!', swipe_right: '?', hint: '!   ?'}
+      - {click: BackSpace, width: 15, key_text_offset_y: 0}
+      #第五行
+      - {click: Keyboard_basic_symbol, width: 12.5, key_text_offset_y: 0, long_click: Theme_settings}
+      - {click: Menu, width: 12.5, key_text_offset_y: 0, long_click: IME_switch}
+      - {click: ',', label: ，, long_click: Extra_keyboard}
+      - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
+      - {click: '.', label: 。, long_click: '……'}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+
+  letter:
+    name: 西文36键
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 10
+    #height默认，不写
+    key_text_offset_y: -.6    #按键文本偏移（下正上负）
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: '1', long_click: '¹', swipe_up: '¹', swipe_down: '₁', hint: '₁'}
+      - {click: '2', long_click: '²', swipe_up: '²', swipe_down: '₂', hint: '₂'}
+      - {click: '3', long_click: '³', swipe_up: '³', swipe_down: '₃', hint: '₃'}
+      - {click: '4', long_click: '⁴', swipe_up: '⁴', swipe_down: '₄', hint: '₄'}
+      - {click: '5', long_click: '⁵', swipe_up: '⁵', swipe_down: '₅', hint: '₅'}
+      - {click: '6', long_click: '⁶', swipe_up: '⁶', swipe_down: '₆', hint: '₆'}
+      - {click: '7', long_click: '⁷', swipe_up: '⁷', swipe_down: '₇', hint: '₇'}
+      - {click: '8', long_click: '⁸', swipe_up: '⁸', swipe_down: '₈', hint: '₈'}
+      - {click: '9', long_click: '⁹', swipe_up: '⁹', swipe_down: '₉', hint: '₉'}
+      - {click: '0', long_click: '⁰', swipe_up: '⁰', swipe_down: '₀', hint: '₀'}
+      #第二行
+      - {click: 'q', long_click: '`'}
+      - {click: 'w', long_click: '|'}
+      - {click: 'e', long_click: '@'}
+      - {click: 'r', long_click: '^'}
+      - {click: 't', long_click: '·'}
+      - {click: 'y', long_click: '*'}
+      - {click: 'u', long_click: '=', swipe_left: '/', swipe_right: '\', hint: '/   \'}
+      - {click: 'i', long_click: '+', swipe_left: '<', swipe_right: '>', hint: '<   >'}
+      - {click: 'o', long_click: '×', swipe_left: '{', swipe_right: '}', hint: '{   }'}
+      - {click: 'p', long_click: '\'}
+      #第三行
+      - {width: 5}
+      - {click: 'a', long_click: 'select_all'}
+      - {click: 's', long_click: '#', swipe_left: '℃', swipe_right: '℉', hint: '℃   ℉'}
+      - {click: 'd', long_click: '$', swipe_left: '¢', swipe_right: '€', hint: '¢   €'}
+      - {click: 'f', long_click: '¥', swipe_left: '£', swipe_right: '₿', hint: '£   ₿'}
+      - {click: 'g', long_click: '_'}
+      - {click: 'h', long_click: '—'}
+      - {click: 'j', long_click: '-', swipe_left: '⟨', swipe_right: '⟩', hint: '⟨   ⟩'}
+      - {click: 'k', long_click: '÷', swipe_left: '[', swipe_right: ']', hint: '[   ]'}
+      - {click: 'l', long_click: '~', swipe_left: '(', swipe_right: ')', hint: '(   )'}
+      - {width: 5}
+      #第四行
+      - {click: Shift_L, width: 15, key_text_offset_y: 0}
+      - {click: 'z', long_click: '^_^'}
+      - {click: 'x', long_click: cut}
+      - {click: 'c', long_click: copy}
+      - {click: 'v', long_click: paste, swipe_down: Keyboard_clipboard, hint: '剪贴板'}
+      - {click: 'b', long_click: '&', swipe_left: "'", swipe_right: '"', hint: "'   \""}
+      - {click: 'n', long_click: '%', swipe_left: ';', swipe_right: ':', hint: ';   :'}
+      - {click: 'm', long_click: '¿', swipe_left: '!', swipe_right: '?', hint: '!   ?'}
+      - {click: BackSpace, width: 15, key_text_offset_y: 0}
+      #第五行
+      - {click: Keyboard_basic_symbol, width: 12.5, key_text_offset_y: 0, long_click: Theme_settings}
+      - {click: Menu, width: 12.5, key_text_offset_y: 0, long_click: IME_switch}
+      - {click: ',', long_click: Extra_keyboard}
+      - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
+      - {click: '.', long_click: '…'}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+
+  double_pinyin_mspy:
+    name: 微软双拼键盘
+    author: 'Windy_D'
+    ascii_mode: 0
+    width: 10
+    #height默认，不写
+    key_text_offset_y: -.6    #按键文本偏移（下正上负）
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: '1', long_click: '¹', swipe_up: '¹', swipe_down: '₁', hint: '₁'}
+      - {click: '2', long_click: '²', swipe_up: '²', swipe_down: '₂', hint: '₂'}
+      - {click: '3', long_click: '³', swipe_up: '³', swipe_down: '₃', hint: '₃'}
+      - {click: '4', long_click: '⁴', swipe_up: '⁴', swipe_down: '₄', hint: '₄'}
+      - {click: '5', long_click: '⁵', swipe_up: '⁵', swipe_down: '₅', hint: '₅'}
+      - {click: '6', long_click: '⁶', swipe_up: '⁶', swipe_down: '₆', hint: '₆'}
+      - {click: '7', long_click: '⁷', swipe_up: '⁷', swipe_down: '₇', hint: '₇'}
+      - {click: '8', long_click: '⁸', swipe_up: '⁸', swipe_down: '₈', hint: '₈'}
+      - {click: '9', long_click: '⁹', swipe_up: '⁹', swipe_down: '₉', hint: '₉'}
+      - {click: '0', long_click: '⁰', swipe_up: '⁰', swipe_down: '₀', hint: '₀'}
+      #第二行
+      - {click: 'q', long_click: '`'}
+      - {click: 'w', long_click: '|', swipe_left: '<', swipe_right: '>', hint: '<   >'}
+      - {click: 'e', long_click: '@', swipe_left: '⟨', swipe_right: '⟩', hint: '⟨   ⟩'}
+      - {click: 'r', long_click: '^'}
+      - {click: 't', long_click: '·'}
+      - {click: 'y', long_click: '*', swipe_left: '/', swipe_right: '\', hint: '/   \'}
+      - {click: 'u', long_click: '+', swipe_left: '{', swipe_right: '}', hint: '{   }'}
+      - {click: 'i', long_click: '×', swipe_left: '[', swipe_right: ']', hint: '[   ]'}
+      - {click: 'o', long_click: '=', swipe_left: '(', swipe_right: ')', hint: '(   )'}
+      - {click: 'p', long_click: '.'}
+      #第三行
+      - {click: 'a', long_click: select_all}
+      - {click: 's', long_click: '#', swipe_left: '℃', swipe_right: '℉', hint: '℃   ℉'}
+      - {click: 'd', long_click: '$', swipe_left: '¢', swipe_right: '€', hint: '¢   €'}
+      - {click: 'f', long_click: '¥', swipe_left: '£', swipe_right: '₿', hint: '£   ₿'}
+      - {click: 'g', long_click: '_', swipe_left: '〈', swipe_right: '〉', hint: '〈   〉'}
+      - {click: 'h', long_click: '——', swipe_left: '『', swipe_right: '』', hint: '『   』'}
+      - {click: 'j', long_click: '-', swipe_left: '《', swipe_right: '》', hint: '《   》'}
+      - {click: 'k', long_click: '÷', swipe_left: '「', swipe_right: '」', hint: '「   」'}
+      - {click: 'l', long_click: '~', swipe_left: '（', swipe_right: '）', hint: '（   ）'}
+      - {click: ';', long_click: ':'}
+      #第四行
+      - {click: Shift_L, width: 15, key_text_offset_y: 0}
+      - {click: 'z', long_click: '^_^'}
+      - {click: 'x', long_click: cut}
+      - {click: 'c', long_click: copy}
+      - {click: 'v', long_click: paste, swipe_down: Keyboard_clipboard, hint: '剪贴板'}
+      - {click: 'b', long_click: '&', swipe_left: "'", swipe_right: '"', hint: "'   \""}
+      - {click: 'n', long_click: '%', swipe_left: ';', swipe_right: ':', hint: ';   :'}
+      - {click: 'm', long_click: '¿', swipe_left: '!', swipe_right: '?', hint: '!   ?'}
+      - {click: BackSpace, width: 15, key_text_offset_y: 0}
+      #第五行
+      - {click: Keyboard_basic_symbol, width: 12.5, key_text_offset_y: 0, long_click: Theme_settings}
+      - {click: Menu, width: 12.5, key_text_offset_y: 0, long_click: IME_switch}
+      - {click: ',', label: ，, long_click: Extra_keyboard}
+      - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
+      - {click: 。, long_click: '……', swipe_right: '、', hint: '    、'}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+
+  bopomofo:
+    name: 注音键盘
+    author: "Windy_D"
+    ascii_mode: 0
+    ascii_keyboard: letter    #在3.2.6，这功能还没实现……
+    width: 10
+    # height: 44
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+    # 第一行
+    - {label: 'ㄅ', click: '1', long_click: '¹', swipe_up: '¹', swipe_down: '₁', hint: '₁'}
+    - {label: 'ㄉ', click: '2', long_click: '²', swipe_up: '²', swipe_down: '₂', hint: '₂'}
+    - {label: 'ˇ', click: '3', long_click: '³', swipe_up: '³', swipe_down: '₃', hint: '₃'}
+    - {label: 'ˋ', click: '4', long_click: '⁴', swipe_up: '⁴', swipe_down: '₄', hint: '₄'}
+    - {label: 'ㄓ', click: '5', long_click: '⁵', swipe_up: '⁵', swipe_down: '₅', hint: '₅'}
+    - {label: 'ˊ', click: '6', long_click: '⁶', swipe_up: '⁶', swipe_down: '₆', hint: '₆'}
+    - {label: '˙', click: '7', long_click: '⁷', swipe_up: '⁷', swipe_down: '₇', hint: '₇'}
+    - {label: 'ㄚ', click: '8', long_click: '⁸', swipe_up: '⁸', swipe_down: '₈', hint: '₈'}
+    - {label: 'ㄞ', click: '9', long_click: '⁹', swipe_up: '⁹', swipe_down: '₉', hint: '₉'}
+    - {label: 'ㄢ', click: '0', long_click: '⁰', swipe_up: '⁰', swipe_down: '₀', hint: '₀'}
+    # 第二行
+    - {label: 'ㄆ', click: 'q', long_click: '`'}
+    - {label: 'ㄊ', click: 'w', long_click: '|', swipe_left: '<', swipe_right: '>', hint: '<   >'}
+    - {label: 'ㄍ', click: 'e', long_click: '@', swipe_left: '⟨', swipe_right: '⟩', hint: '⟨   ⟩'}
+    - {label: 'ㄐ', click: 'r', long_click: '^'}
+    - {label: 'ㄔ', click: 't', long_click: '·'}
+    - {label: 'ㄗ', click: 'y', long_click: '*', swipe_left: '/', swipe_right: '\', hint: '/   \'}
+    - {label: 'ㄧ', click: 'u', long_click: '+', swipe_left: '{', swipe_right: '}', hint: '{   }'}
+    - {label: 'ㄛ', click: 'i', long_click: '×', swipe_left: '[', swipe_right: ']', hint: '[   ]'}
+    - {label: 'ㄟ', click: 'o', long_click: '=', swipe_left: '(', swipe_right: ')', hint: '(   )'}
+    - {label: 'ㄣ', click: 'p', long_click: '、'}
+    # 第三行
+    - {label: 'ㄇ', click: 'a', long_click: 'select_all'}
+    - {label: 'ㄋ', click: 's', long_click: '#', swipe_left: '℃', swipe_right: '℉', hint: '℃   ℉'}
+    - {label: 'ㄎ', click: 'd', long_click: '$', swipe_left: '¢', swipe_right: '€', hint: '¢   €'}
+    - {label: 'ㄑ', click: 'f', long_click: '¥', swipe_left: '£', swipe_right: '₿', hint: '£   ₿'}
+    - {label: 'ㄕ', click: 'g', long_click: '_', swipe_left: '〈', swipe_right: '〉', hint: '〈   〉'}
+    - {label: 'ㄘ', click: 'h', long_click: '——', swipe_left: '『', swipe_right: '』', hint: '『   』'}
+    - {label: 'ㄨ', click: 'j', long_click: '-', swipe_left: '《', swipe_right: '》', hint: '《   》'}
+    - {label: 'ㄜ', click: 'k', long_click: '÷', swipe_left: '「', swipe_right: '」', hint: '「   」'}
+    - {label: 'ㄠ', click: 'l', long_click: '~', swipe_left: '（', swipe_right: '）', hint: '（   ）'}
+    - {label: 'ㄤ', click: ';'}
+    # 第四行
+    - {label: 'ㄈ', click: 'z'}
+    - {label: 'ㄌ', click: 'x', long_click: '^_^'}
+    - {label: 'ㄏ', click: 'c', long_click: cut}
+    - {label: 'ㄒ', click: 'v', long_click: copy}
+    - {label: 'ㄖ', click: 'b', long_click: paste, swipe_down: Keyboard_clipboard, hint: '剪贴板'}
+    - {label: 'ㄙ', click: 'n', long_click: '&', swipe_left: "'", swipe_right: '"', hint: "'   \""}
+    - {label: 'ㄩ', click: 'm', long_click: '%', swipe_left: ';', swipe_right: ':', hint: ';   :'}
+    - {label: 'ㄝ', click: ',', long_click: '¿', swipe_left: '!', swipe_right: '?', hint: '!   ?'}
+    - {label: 'ㄡ', click: '.'}
+    - {label: 'ㄥ', click: '/'}
+    # 第五行
+    - {click: Shift_L, send_bindings: false, key_text_offset_y: 0}
+    - {click: Menu, key_text_offset_y: 0, long_click: IME_switch}
+    - {click: Keyboard_basic_symbol, width: 12.5, key_text_offset_y: 0, long_click: Theme_settings}
+    - {click: space, width: 27.5}
+    - {label: 'ㄦ', click: "-", long_click: Extra_keyboard}
+    - {click: '，', long_click: '。'}
+    - {click: BackSpace, key_text_offset_y: 0}
+    - {click: Return, key_text_size: 42, key_text_offset_y: -8, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+
+  japanese_12_key:
+    name: 日文12键
+    author: 'Windy_D'
+    ascii_mode: 0
+    width: 20
+    height: *jpn_key_height
+    #key_text_offset_y: -.6    #按键文本偏移（下正上负）
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: undo, long_click: redo}
+      #为什么用 q 呢？答案是避免重码
+      #事实上这配套方案包括了许多奇怪的码
+      - {click: 'qa', label: あ, swipe_left: qi, swipe_up: qu, swipe_right: qe, swipe_down: qo}
+      - {click: 'ka', label: か, swipe_left: ki, swipe_up: ku, swipe_right: ke, swipe_down: ko}
+      - {click: 'sa', label: さ, swipe_left: si, swipe_up: su, swipe_right: se, swipe_down: so}
+      - {click: BackSpace, has_menu: JapaneseBackSpace}
+      #第二行
+      - {click: JapaneseNum}
+      - {click: 'ta', label: た, swipe_left: ti, swipe_up: tu, swipe_right: te, swipe_down: to}
+      - {click: 'na', label: な, swipe_left: ni, swipe_up: nu, swipe_right: ne, swipe_down: 'no'}
+      - {click: 'ha', label: は, swipe_left: hi, swipe_up: fu, swipe_right: he, swipe_down: ho}
+      - {click: '', label: '^_^'}
+      #第三行
+      - {click: Pigeon}
+      - {click: 'ma', label: ま, swipe_left: mi, swipe_up: mu, swipe_right: me, swipe_down: mo}
+      - {click: 'ya', label: や, swipe_left: 「, swipe_up: yu, swipe_right: 」, swipe_down: yo}
+      - {click: 'ra', label: ら, swipe_left: ri, swipe_up: ru, swipe_right: re, swipe_down: ro}
+      - {click: space}
+      #第四行
+      - {click: Keyboard_clipboard, long_click: Theme_settings}
+      - {click: Menu, has_menu: 'Transform', long_click: IME_switch}
+      - {click: 'wa', label: わ, swipe_left: wo, swipe_up: nn, swipe_right: '--', swipe_down: ～}
+      - {click: 、, swipe_left: 。, swipe_up: ？, swipe_right: ！, swipe_down: …}
+      - {click: Return, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+
+  japanese_num_12_key:
+    name: 日文数字12键
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 20
+    height: *jpn_key_height
+    #key_text_offset_y: -.6    #按键文本偏移（下正上负）
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: undo, long_click: redo}
+      - {click: '1', swipe_left: ☆, swipe_up: ♪, swipe_right: →, hint: '☆♪→'}
+      - {click: '2', swipe_left: ¥, swipe_up: $, swipe_right: €, hint: '¥ $ €'}
+      - {click: '3', swipe_left: '%', swipe_up: °, swipe_right: '#', hint: '% ° #'}
+      - {click: BackSpace, has_menu: JapaneseBackSpace}
+      #第二行
+      - {click: JapaneseDefault}
+      - {click: '4', swipe_left: ○, swipe_up: ＊, swipe_right: ・, hint: '○ ＊・'}
+      - {click: '5', swipe_left: '+', swipe_up: '×', swipe_right: '÷', hint: '+  × ÷'}
+      - {click: '6', swipe_left: '<', swipe_up: '=', swipe_right: '>', hint: '< = >'}
+      - {click: '', label: '^_^'}
+      #第三行
+      - {click: Pigeon}
+      - {click: '7', swipe_left: 「, swipe_up: 」, swipe_right: ':', hint: '「 」:'}
+      - {click: '8', swipe_left: 〒, swipe_up: 々, swipe_right: 〆, hint: '〒々〆'}
+      - {click: '9', swipe_left: '^', swipe_up: '|', swipe_right: '\', hint: '^  |  \'}
+      - {click: space}
+      #第四行
+      - {click: Pigeon, long_click: Theme_settings}
+      - {click: JapaneseNumBracket, swipe_left: ')', swipe_up: '[', swipe_right: ']'}
+      - {click: '0', swipe_left: 〜, swipe_up: …, hint: '〜…'}
+      - {click: JapaneseNumComma, swipe_left: '.', swipe_up: '-', swipe_right: '/'}
+      - {click: Return, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+
+  basic_symbol:
+    name: 基本符号键盘
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 10
+    height: *26_key_height
+    vertical_gap: *26_key_vert_gap
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: '~'}
+      - {click: '↑', long_click: '⇑'}
+      - {click: '№', swipe_left: '₹', swipe_right: '₱', hint: '₹   ₱'}
+      - {click: '♪'}
+      - {click: '¶', long_click: '§'}
+      - {click: '°', long_click: '', swipe_left: '′', swipe_right: '″', hint: '′   ″'}
+      - {click: '∅', long_click: 'ⁿ'}
+      - {click: '±', long_click: '∓'}
+      - {click: '≠', long_click: '∞', swipe_left: '≡', swipe_right: '≈', hint: '≡   ≈'}
+      - {click: '√', key_text_size: 16, long_click: '∛', swipe_down: '∜', hint: '∜'}
+      #第二行
+      - {click: '←', long_click: '⇐'}
+      - {click: '↓', long_click: '⇓'}
+      - {click: '→', long_click: '⇒'}
+      - {click: '•', swipe_left: '„', swipe_right: '‚', hint: '„   ‚'}
+      - {click: '★', key_text_size: 16, swipe_left: '‡', swipe_right: '†', hint: '‡   †'}
+      - {click: '–', long_click: '—'}
+      - {click: '−'}
+      - {click: 'Ω', long_click: '℧'}
+      - {click: 'μ'}
+      - {click: 'π', long_click: 'Π'}
+      #第三行
+      - {click: Keyboard_math_symbol, width: 15, key_text_offset_y: 0}
+      - {click: '™', long_click: '℅', swipe_left: '©', swipe_right: '®', hint: '©   ®'}
+      - {click: '♠', key_text_size: 16, long_click: '♥', swipe_left: '♦', swipe_right: '♣', hint: '♦   ♣'}
+      - {click: '⩽', long_click: '≤'}
+      - {click: '⩾', long_click: '≥'}
+      - {click: '✓'}
+      - {click: '‰', long_click: '‱'}
+      - {click: '¡'}
+      - {click: BackSpace, width: 15, key_text_offset_y: 0}
+      #第四行
+      - {click: Keyboard_default, width: 12.5, key_text_offset_y: 0}
+      - {click: Pigeon, width: 12.5, key_text_offset_y: 0}
+      - {click: '‹', long_click: '«'}
+      - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
+      - {click: '›', long_click: '»'}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+
+  math_symbol:
+    name: 数学符号键盘
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 10
+    height: *26_key_height
+    vertical_gap: *26_key_vert_gap
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: '∅', long_click: '∁'}
+      - {click: '∃', long_click: '∄', swipe_down: '∀', hint: '∀'}
+      - {click: '∈', key_text_size: 16, long_click: '∉', swipe_left: '∋', swipe_right: '∌', hint: '∋   ∌'}
+      - {click: 'Σ', key_text_size: 22, swipe_left: 'Π', swipe_right: '∐', hint: 'Π   ∐'}
+      - {click: '∫', long_click: '∬', swipe_left: '∭', swipe_right: '⨌', hint: '∭   ⨌'}
+      - {click: '∮', swipe_left: '∯', swipe_right: '∰', hint: '∯   ∰'}
+      - {click: 'Δ', long_click: '∂'}
+      - {click: 'ℝ', long_click: 'ℚ'}
+      - {click: 'ℕ', long_click: 'ℤ'}
+      - {click: 'ℂ', long_click: 'ℍ'}
+      #第二行
+      - {click: '∧', long_click: '∨'}
+      - {click: '∩', long_click: '∪', swipe_left: '⋂', swipe_right: '⋃', hint: '⋂   ⋃'}
+      - {click: '⊂', key_text_size: 16, long_click: '⊆', swipe_down: '⊈', hint: '⊈'}
+      - {click: '⊊', key_text_size: 16, long_click: '⫋'}
+      - {click: '∣', long_click: '∤', swipe_left: '∥', swipe_right: '⟂', hint: '∥   ⟂'}
+      - {click: '∗'}
+      - {click: '⊕', long_click: '⊖', swipe_down: '⊙', hint: '⊙'}
+      - {click: '∠', long_click: '∢'}
+      - {click: '∎'}
+      - {click: '↊', long_click: '↋'}
+      #第三行
+      - {click: Keyboard_basic_symbol, width: 15, key_text_offset_y: 0}
+      - {click: '∵', long_click: '∴'}
+      - {click: '⎜', key_text_size: 16, long_click: '⎛', swipe_up: '⎛', swipe_down: '⎝', hint: '⎝'}
+      - {click: '⎟', key_text_size: 16, long_click: '⎞', swipe_up: '⎞', swipe_down: '⎠', hint: '⎠'}
+      - {click: '⋯', long_click: '⋮', swipe_left: '⋰', swipe_right: '⋱', hint: '⋰   ⋱'}
+      - {click: '≝', long_click: '≟', swipe_down: '∝', hint: '∝'}
+      - {click: '∽', long_click: '∼', swipe_down: '≌', hint: '≌'}
+      - {click: '⇔', long_click: '⇌', swipe_left: '', swipe_right: '', hint: '   '}
+      - {click: BackSpace, width: 15, key_text_offset_y: 0}
+      #第四行
+      - {click: Keyboard_default, width: 12.5, key_text_offset_y: 0}
+      - {click: Pigeon, width: 12.5, key_text_offset_y: 0}
+      - {click: '≪', key_text_size: 16}
+      - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
+      - {click: '≫', key_text_size: 16}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+
+  Greek:
+    name: 希腊字母键盘
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 10
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: ';', long_click: '`'}
+      - {click: 'ς'}
+      - {click: 'ε', long_click: 'έ'}
+      - {click: 'ρ', long_click: '^'}
+      - {click: 'τ', long_click: '·'}
+      - {click: 'υ', long_click: 'ύ', swipe_left: 'ϋ', swipe_right: 'ΰ', hint: 'ϋ   ΰ'}
+      - {click: 'θ'}
+      - {click: 'ι', long_click: 'ί', swipe_left: 'ϊ', swipe_right: 'ΐ', hint: 'ϊ   ΐ'}
+      - {click: 'ο', long_click: 'ό'}
+      - {click: 'π', long_click: '~'}
+      #第二行
+      - {width: 5}
+      - {click: 'α', long_click: 'ά'}
+      - {click: 'σ', long_click: '#', swipe_left: '℃', swipe_right: '℉', hint: '℃   ℉'}
+      - {click: 'δ', long_click: '€', swipe_left: '$', swipe_right: '¢', hint: '$   ¢'}
+      - {click: 'φ', long_click: '£', swipe_left: '¥', swipe_right: '₿', hint: '¥   ₿'}
+      - {click: 'γ'}
+      - {click: 'η', long_click: 'ή'}
+      - {click: 'ξ', long_click: '-', swipe_left: '{', swipe_right: '}', hint: '{   }'}
+      - {click: 'κ', long_click: '+', swipe_left: '[', swipe_right: ']', hint: '[   ]'}
+      - {click: 'λ', long_click: '=', swipe_left: '(', swipe_right: ')', hint: '(   )'}
+      - {width: 5}
+      #第三行
+      - {click: Shift_L, width: 15, key_text_offset_y: 0}
+      - {click: 'ζ', long_click: '|', swipe_left: '/', swipe_right: '\', hint: '/   \'}
+      - {click: 'χ', long_click: '%'}
+      - {click: 'ψ'}
+      - {click: 'ω', long_click: 'ώ'}
+      - {click: 'β', long_click: '&', swipe_left: "'", swipe_right: '"', hint: "'   \""}
+      - {click: 'ν', long_click: '_', swipe_left: ';', swipe_right: ':', hint: ';   :'}
+      - {click: 'μ', long_click: '¿', swipe_left: '!', swipe_right: '?', hint: '!   ?'}
+      - {click: BackSpace, width: 15, key_text_offset_y: 0}
+      #第四行
+      - {click: Keyboard_Greek_symbol, width: 15, key_text_offset_y: 0}
+      - {click: ',', long_click: '«'}
+      - {click: space, width: 50, swipe_left: "Left", swipe_right: "Right"}
+      - {click: '.', long_click: '»'}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      #第五行
+      - {width: 10}
+      - {click: Keyboard_default, width: 20, height: *sub_key_height}
+      - {click: Keyboard_Greek_Selected, width: 20, key_back_color: enter_bg_color, key_text_color: off_key_text_color}
+      - {click: Keyboard_Cyrillic, width: 20}
+      - {click: Keyboard_IPA, width: 20}
+      - {width: 10}
+
+  Greek_symbol:
+    name: 希腊字母符号键盘
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 10
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: '~'}
+      - {click: '↑', long_click: '⇑'}
+      - {click: '№'}
+      - {click: '♪'}
+      - {click: '¶', long_click: '§'}
+      - {click: '°', swipe_left: '′', swipe_right: '″', hint: '′   ″'}
+      - {click: '∅', long_click: 'ⁿ'}
+      - {click: '±', long_click: '∓'}
+      - {click: '≠', long_click: '∞'}
+      - {click: '√', key_text_size: 16, long_click: '∛'}
+      #第二行
+      - {click: '←', long_click: '⇐'}
+      - {click: '↓', long_click: '⇓'}
+      - {click: '→', long_click: '⇒'}
+      - {click: '•', swipe_left: '„', swipe_right: '‚', hint: '„   ‚'}
+      - {click: '★', key_text_size: 16, swipe_left: '‡', swipe_right: '†', hint: '‡   †'}
+      - {click: '–', long_click: '—'}
+      - {click: '−'}
+      - {click: 'Ω', long_click: '℧'}
+      - {click: 'μ'}
+      - {click: 'π', long_click: 'Π'}
+      #第三行
+      - {click: Nothing, width: 15, key_text_offset_y: 0}
+      - {click: '™', swipe_left: '©', swipe_right: '®', hint: '©   ®'}
+      - {click: '♠', key_text_size: 16, long_click: '♥', swipe_left: '♦', swipe_right: '♣', hint: '♦   ♣'}
+      - {click: '≤', key_text_size: 16}
+      - {click: '≥', key_text_size: 16}
+      - {click: '✓'}
+      - {click: '‰', long_click: '‱'}
+      - {click: '¡'}
+      - {click: BackSpace, width: 15, key_text_offset_y: 0}
+      #第四行
+      - {click: Keyboard_Greek, width: 15, key_text_offset_y: 0}
+      - {click: ',', long_click: '«'}
+      - {click: space, width: 50, swipe_left: "Left", swipe_right: "Right"}
+      - {click: '.', long_click: '»'}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      #第五行
+      - {width: 10}
+      - {click: Keyboard_default, width: 20, height: *sub_key_height}
+      - {click: Keyboard_Greek_Selected, width: 20, key_back_color: enter_bg_color, key_text_color: off_key_text_color}
+      - {click: Keyboard_Cyrillic, width: 20}
+      - {click: Keyboard_IPA, width: 20}
+      - {width: 10}
+        
+  Cyrillic:
+    name: 西里尔字母键盘
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 9
+    #height: *26_key_height
+    #vertical_gap: *26_key_vert_gap
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {width: 0.5}
+      - {click: 'й', long_click: '`'}
+      - {click: 'ц', long_click: '@'}
+      - {click: 'у', long_click: 'у́'}
+      - {click: 'к', long_click: '#'}
+      - {click: 'е', long_click: 'е́', swipe_left: 'ё', swipe_right: 'ѣ', hint: 'ё   ѣ'}
+      - {click: 'н', long_click: '&'}
+      - {click: 'г', long_click: 'ґ'}
+      - {click: 'ш', long_click: '*'}
+      - {click: 'щ', long_click: '+'}
+      - {click: 'з', long_click: '|', swipe_left: '/', swipe_right: '\', hint: '/   \'}
+      - {click: 'х', long_click: '~'}
+      - {width: 0.5}
+      #第二行
+      - {width: 0.5}
+      - {click: 'ф', long_click: 'ѳ'}
+      - {click: 'ы', long_click: 'ы́'}
+      - {click: 'в', long_click: '€'}
+      - {click: 'а', long_click: 'а́'}
+      - {click: 'п', long_click: '₽'}
+      - {click: 'р'}
+      - {click: 'о', long_click: 'о́', swipe_left: '«', swipe_right: '»', hint: '«   »'}
+      - {click: 'л', long_click: '=', swipe_left: '{', swipe_right: '}', hint: '{   }'}
+      - {click: 'д', long_click: '_', swipe_left: '[', swipe_right: ']', hint: '[   ]'}
+      - {click: 'ж', long_click: '-', swipe_left: '(', swipe_right: ')', hint: '(   )'}
+      - {click: 'э', long_click: 'є', swipe_down: 'э́', hint: 'э́'}
+      - {width: 0.5}
+      #第三行
+      - {click: Shift_L, width: 9.5, key_text_offset_y: 0}
+      - {click: 'я', long_click: 'я́'}
+      - {click: 'ч', long_click: '%'}
+      - {click: 'с'}
+      - {click: 'м'}
+      - {click: 'и', long_click: 'и́', swipe_left: 'і', swipe_right: 'ї', hint: 'і   ї'}
+      - {click: 'т', swipe_left: "'", swipe_right: '"', hint: "'   \""}
+      - {click: 'ь', long_click: 'ъ', swipe_left: ';', swipe_right: ':', hint: ';   :'}
+      - {click: 'б', swipe_left: '!', swipe_right: '?', hint: '!   ?'}
+      - {click: 'ю', long_click: 'ю́'}
+      - {click: BackSpace, width: 9.5, key_text_offset_y: 0}
+      #第四行
+      - {click: Keyboard_Cyrillic_symbol, width: 15, key_text_offset_y: 0}
+      - {click: ',', width: 10}
+      - {click: space, width: 50, swipe_left: "Left", swipe_right: "Right"}
+      - {click: '.', width: 10}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      #第五行
+      - {width: 10}
+      - {click: Keyboard_default, width: 20, height: *sub_key_height}
+      - {click: Keyboard_Greek, width: 20}
+      - {click: Keyboard_Cyrillic_Selected, width: 20, key_back_color: enter_bg_color, key_text_color: off_key_text_color}
+      - {click: Keyboard_IPA, width: 20}
+      - {width: 10}
+
+  Cyrillic_symbol:
+    name: 西里尔字母符号键盘
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 10
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: '~'}
+      - {click: '↑', long_click: '⇑'}
+      - {click: '№'}
+      - {click: '♪'}
+      - {click: '¶', long_click: '§'}
+      - {click: '°', swipe_left: '′', swipe_right: '″', hint: '′   ″'}
+      - {click: '∅', long_click: 'ⁿ'}
+      - {click: '±', long_click: '∓'}
+      - {click: '≠', long_click: '∞'}
+      - {click: '√', key_text_size: 16, long_click: '∛'}
+      #第二行
+      - {click: '←', long_click: '⇐'}
+      - {click: '↓', long_click: '⇓'}
+      - {click: '→', long_click: '⇒'}
+      - {click: '•', swipe_left: '„', swipe_right: '‚', hint: '„   ‚'}
+      - {click: '★', key_text_size: 16, swipe_left: '‡', swipe_right: '†', hint: '‡   †'}
+      - {click: '–', long_click: '—'}
+      - {click: '−'}
+      - {click: 'Ω', long_click: '℧'}
+      - {click: 'μ'}
+      - {click: 'π', long_click: 'Π'}
+      #第三行
+      - {click: Nothing, width: 15, key_text_offset_y: 0}
+      - {click: '™', swipe_left: '©', swipe_right: '®', hint: '©   ®'}
+      - {click: '♠', key_text_size: 16, long_click: '♥', swipe_left: '♦', swipe_right: '♣', hint: '♦   ♣'}
+      - {click: '≤', key_text_size: 16}
+      - {click: '≥', key_text_size: 16}
+      - {click: '✓'}
+      - {click: '‰', long_click: '‱'}
+      - {click: '¡'}
+      - {click: BackSpace, width: 15, key_text_offset_y: 0}
+      #第四行
+      - {click: Keyboard_Cyrillic, width: 15, key_text_offset_y: 0}
+      - {click: ',', width: 10}
+      - {click: space, width: 50, swipe_left: "Left", swipe_right: "Right"}
+      - {click: '.', width: 10}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      #第五行
+      - {width: 10}
+      - {click: Keyboard_default, width: 20, height: *sub_key_height}
+      - {click: Keyboard_Greek, width: 20}
+      - {click: Keyboard_Cyrillic_Selected, width: 20, key_back_color: enter_bg_color, key_text_color: off_key_text_color}
+      - {click: Keyboard_IPA, width: 20}
+      - {width: 10}
+
+  IPA1:
+    name: 国际音标键盘（第一页）
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: *ipa_key_width
+    height: *ipa_key_height
+    vertical_gap: *ipa_key_vert_gap
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    horizontal_gap: 2
+    keys:
+      #第一行
+      - {click: 'p'}
+      - {click: 'b', long_click: 'b̪v'}
+      - {click: 't', long_click: 'tɹ̝̊', swipe_down: 't̠ɹ̠̊˔', hint: 't̠ɹ̠̊˔'}
+      - {click: 'd', long_click: 'dɹ̝', swipe_down: 'd̠ɹ̠˔', hint: 'd̠ɹ̠˔'}
+      - {click: 'ʈ'}
+      - {click: 'ɖ'}
+      - {click: 'c', long_click: 'cç'}
+      - {click: 'ɟ', long_click: 'ɟʝ'}
+      - {click: 'k', long_click: 'kʟ̝̊'}
+      - {click: 'ɡ', long_click: 'ɡʟ̝'}
+      - {click: 'q'}
+      - {click: 'ɢ'}
+      #第二行
+      - {click: 'm'}
+      - {click: 'ɱ'}
+      - {click: 'ʙ'}
+      - {click: 'n'}
+      - {click: 'r', long_click: 'ɾ ', swipe_down: 'ɿ', hint: 'ɿ'}
+      - {click: 'ɳ'}
+      - {click: 'ɽ'}
+      - {click: 'ɲ', long_click: 'ȵ'}
+      - {click: 'ŋ'}
+      - {click: 'ɴ'}
+      - {click: 'ʀ'}
+      - {click: 'ʔ', long_click: 'ʡ'}
+      #第三行
+      - {click: 'ɸ', long_click: 'pɸ'}
+      - {click: 'f', long_click: 'p̪f'}
+      - {click: 'θ', long_click: 't̪θ'}
+      - {click: 'ɬ', long_click: 'tɬ'}
+      - {click: 's', long_click: 'ts'}
+      - {click: 'ʃ', long_click: 'tʃ', swipe_left: 'ʅ', swipe_right: 'ʆ', hint: 'ʅ   ʆ'}
+      - {click: 'ʂ', long_click: 'ʈʂ'}
+      - {click: 'ç', long_click: 'ɕ', swipe_down: 'tɕ', hint: 'tɕ'}
+      - {click: 'x', long_click: 'kx'}
+      - {click: 'χ'}
+      - {click: 'ħ', long_click: 'ʜ'}
+      - {click: 'h', long_click: 'ʔh'}
+      #第四行
+      - {click: 'β', long_click: 'bβ'}
+      - {click: 'v', long_click: 'ⱱ'}
+      - {click: 'ð', long_click: 'd̪ð'}
+      - {click: 'ɮ', long_click: 'dɮ'}
+      - {click: 'z', long_click: 'dz'}
+      - {click: 'ʒ', long_click: 'dʒ', swipe_left: 'ʓ', swipe_right: 'dʓ', hint: ' ʓ   dʓ'}
+      - {click: 'ʐ', long_click: 'ɖʐ'}
+      - {click: 'ʝ', long_click: 'ʑ', swipe_down: 'dʑ', hint: 'dʑ'}
+      - {click: 'ɣ', long_click: 'ɡɣ'}
+      - {click: 'ʁ'}
+      - {click: 'ʕ', long_click: 'ʢ'}
+      - {click: 'ɦ', long_click: 'ɧ'}
+      #第五行
+      - {click: Keyboard_IPA2, key_text_offset_y: 0}
+      - {click: 'w', long_click: 'ʍ'}
+      - {click: 'ʋ'}
+      - {click: 'ɹ', long_click: 'ɺ'}
+      - {click: 'l', long_click: 'ɫ'}
+      - {click: 'ɻ'}
+      - {click: 'ɭ', long_click: 'ʈɭ̊˔'}
+      - {click: 'ɥ'}
+      - {click: 'j'}
+      - {click: 'ʎ', long_click: 'ȴ'}
+      - {click: 'ɰ', long_click: 'ʟ'}
+      - {click: BackSpace, key_text_offset_y: 0}
+      #第六行
+      - {click: Keyboard_IPA_symbol_1, width: 15, key_text_offset_y: 0}
+      - {click: 'ˈ', width: 10}
+      - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
+      - {click: IPA_aspirated, width: 10}
+      - {click: '.', width: 10}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      #第七行
+      - {width: 10}
+      - {click: Keyboard_default, width: 20, height: *sub_key_height}
+      - {click: Keyboard_Greek, width: 20}
+      - {click: Keyboard_Cyrillic, width: 20}
+      - {click: Keyboard_IPA_Selected, width: 20, key_back_color: enter_bg_color, key_text_color: off_key_text_color}
+      - {width: 10}
+
+  IPA2:
+    name: 国际音标键盘（第二页）
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: *ipa_key_width
+    height: *ipa_key_height
+    vertical_gap: *ipa_key_vert_gap
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    horizontal_gap: 2
+    keys:
+      #第一行
+      - {click: 'i'}
+      - {click: 'y'}
+      - {width: *ipa_3_key_width}
+      - {click: 'ɨ'}
+      - {click: 'ʉ'}
+      - {width: *ipa_2_key_width}
+      - {click: 'ɯ'}
+      - {click: 'u'}
+      - {width: *ipa_key_width}
+      #第二行
+      - {width: *ipa_2_key_width}
+      - {click: 'ɪ'}
+      - {click: 'ʏ'}
+      - {width: *ipa_key_width}
+      - {click: 'ɪ̈'}
+      - {click: 'ʊ̈'}
+      - {width: *ipa_key_width}
+      - {click: 'ɯ̽'}
+      - {click: 'ʊ'}
+      - {width: *ipa_2_key_width}
+      #第三行
+      - {width: *ipa_key_width}
+      - {click: 'e', long_click: 'e̞'}
+      - {click: 'ø', long_click: 'ø̞'}
+      - {width: *ipa_key_width}
+      - {click: 'ɘ'}
+      - {click: 'ɵ'}
+      - {width: *ipa_key_width}
+      - {click: 'ə', long_click: 'ɚ'}
+      - {width: *ipa_key_width}
+      - {click: 'ɤ', long_click: 'ɤ̞'}
+      - {click: 'o', long_click: 'o̞'}
+      - {width: *ipa_key_width}
+      #第四行
+      - {width: *ipa_key_width}
+      - {click: 'ɛ'}
+      - {click: 'œ'}
+      - {width: *ipa_key_width}
+      - {click: 'ɜ', long_click: 'ɝ'}
+      - {click: 'ɞ'}
+      - {width: *ipa_key_width}
+      - {click: 'ɐ'}
+      - {width: *ipa_key_width}
+      - {click: 'ʌ'}
+      - {click: 'ɔ'}
+      - {width: *ipa_key_width}
+      #第五行
+      - {click: Keyboard_IPA3, key_text_offset_y: 0}
+      - {width: *ipa_key_width}
+      - {click: 'æ'}
+      - {click: 'a'}
+      - {click: 'ɶ'}
+      - {width: *ipa_key_width}
+      - {click: 'ä'}
+      - {click: 'ɒ̈'}
+      - {width: *ipa_key_width}
+      - {click: 'ɑ'}
+      - {click: 'ɒ'}
+      - {click: BackSpace, key_text_offset_y: 0}
+      #第六行
+      - {click: Keyboard_IPA_symbol_1, width: 15, key_text_offset_y: 0}
+      - {click: 'ˈ', width: 10}
+      - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
+      - {click: IPA_aspirated, width: 10}
+      - {click: '.', width: 10}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      #第七行
+      - {width: 10}
+      - {click: Keyboard_default, width: 20, height: *sub_key_height}
+      - {click: Keyboard_Greek, width: 20}
+      - {click: Keyboard_Cyrillic, width: 20}
+      - {click: Keyboard_IPA_Selected, width: 20, key_back_color: enter_bg_color, key_text_color: off_key_text_color}
+      - {width: 10}
+
+  IPA3:
+    name: 国际音标键盘（第三页）
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: *ipa_key_width
+    height: *ipa_key_height
+    vertical_gap: *ipa_key_vert_gap
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    horizontal_gap: 2
+    keys:
+      #第一行
+      - {click: 'ɓ̥'}
+      - {click: 'ɓ'}
+      - {click: 'ɗ̥'}
+      - {click: 'ɗ'}
+      - {click: 'ᶑ̥'}
+      - {click: 'ᶑ'}
+      - {click: 'ʄ̊'}
+      - {click: 'ʄ'}
+      - {click: 'ɠ̊'}
+      - {click: 'ɠ'}
+      - {click: 'ʛ̥'}
+      - {click: 'ʛ', long_click: 'ʠ'}
+      #第二行
+      - {click: 'pʼ'}
+      - {click: 'tʼ'}
+      - {click: 'tsʼ'}
+      - {click: 't̠ʃʼ'}
+      - {click: 'ʈʂʼ'}
+      - {click: 'ʈʼ'}
+      - {click: 'ɬʼ'}
+      - {click: 'tɬʼ'}
+      - {click: 'cʼ'}
+      - {click: 'kʼ'}
+      - {click: 'qʼ'}
+      - {click: 'ʡʼ'}
+      #第三行
+      - {click: 'ɸʼ'}
+      - {click: 'fʼ'}
+      - {click: 'θʼ'}
+      - {click: 'sʼ'}
+      - {click: 'ʃʼ'}
+      - {click: 'ʂʼ'}
+      - {click: 'ɕʼ'}
+      - {click: 'cʎ̝̊ʼ'}
+      - {click: 'xʼ'}
+      - {click: 'kʟ̝̊ʼ'}
+      - {click: 'xʼ'}
+      - {click: 'χʼ'}
+      #第四行
+      - {click: 'ʘ'}
+      - {click: 'ʘ̬'}
+      - {click: 'ǀ'}
+      - {click: 'ǀ̬'}
+      - {click: 'ǀ̃'}
+      - {click: 'ǃ', long_click: '¡'}
+      - {click: 'ǃ̬'}
+      - {click: 'ǃ˞'}
+      - {click: 'ǂ', long_click: 'ʞ'}
+      - {click: 'ǂ̬'}
+      - {click: IPA_glottalized}
+      - {click: IPA_nasalized_glottalized}
+      #第五行
+      - {click: Keyboard_IPA1, key_text_offset_y: 0}
+      - {click: 'ʘ̃'}
+      - {click: 'ǁ'}
+      - {click: 'ǁ̬'}
+      - {click: 'ǁ̃'}
+      - {click: 'ǃ̃'}
+      - {click: 'ǃ̃˞'}
+      - {click: 'ǃ̬˞'}
+      - {click: 'ǂ̃'}
+      - {click: IPA_voiceless_below}
+      - {click: IPA_ejective}
+      - {click: BackSpace, key_text_offset_y: 0}
+      #第六行
+      - {click: Keyboard_IPA_symbol_1, width: 15, key_text_offset_y: 0}
+      - {click: 'ˈ', width: 10}
+      - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
+      - {click: IPA_aspirated, width: 10}
+      - {click: '.', width: 10}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      #第七行
+      - {width: 10}
+      - {click: Keyboard_default, width: 20, height: *sub_key_height}
+      - {click: Keyboard_Greek, width: 20}
+      - {click: Keyboard_Cyrillic, width: 20}
+      - {click: Keyboard_IPA_Selected, width: 20, key_back_color: enter_bg_color, key_text_color: off_key_text_color}
+      - {width: 10}
+
+  IPA_symbol_1:
+    name: 国际音标符号（第一页）
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 10
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: '˥', long_click: IPA_exhigh}
+      - {click: '˦', long_click: IPA_high}
+      - {click: '˧', long_click: IPA_mid}
+      - {click: '˨', long_click: IPA_low}
+      - {click: '˩', long_click: IPA_exlow}
+      - {click: '˩˥', long_click: IPA_rising, swipe_left: '↗︎', swipe_right: 'ꜛ', hint: '↗︎   ꜛ◌'}
+      - {click: '˥˩', long_click: IPA_falling, swipe_left: '↘︎', swipe_right: 'ꜜ', hint: '↘︎   ꜜ◌'}
+      - {click: '˦˥', long_click: IPA_high_rising}
+      - {click: '˩˨', long_click: IPA_low_rising}
+      - {click: '˧˦˧', long_click: IPA_rising_falling, swipe_down: '→', hint: '→'}
+      #第二行
+      - {click: '⸨', long_click: '⟨'}
+      - {click: '⸩', long_click: '⟩'}
+      - {click: '(', long_click: '<'}
+      - {click: ')', long_click: '>'}
+      - {click: '[', long_click: '‹'}
+      - {click: ']', long_click: '›'}
+      - {click: '/'}
+      - {click: '{'}
+      - {click: '}'}
+      - {click: '‿'}
+      #第三行
+      - {click: Keyboard_IPA_symbol_2, width: 15, key_text_offset_y: 0}
+      - {click: 'ˈ'}
+      - {click: 'ˌ'}
+      - {click: 'ː'}
+      - {click: 'ˑ'}
+      - {click: IPA_extra_short}
+      - {click: '|'}
+      - {click: '‖'}
+      - {click: BackSpace, width: 15, key_text_offset_y: 0}
+      #第四行
+      - {click: Keyboard_IPA, width: 15, key_text_offset_y: 0}
+      - {click: ','}
+      - {click: space, width: 50, swipe_left: "Left", swipe_right: "Right"}
+      - {click: '.'}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      #第五行
+      - {width: 10}
+      - {click: Keyboard_default, width: 20, height: *sub_key_height}
+      - {click: Keyboard_Greek, width: 20}
+      - {click: Keyboard_Cyrillic, width: 20}
+      - {click: Keyboard_IPA_Selected, width: 20, key_back_color: enter_bg_color, key_text_color: off_key_text_color}
+      - {width: 10}
+
+  IPA_symbol_2:
+    name: 国际音标符号（第二页）
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 10
+    key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
+    key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
+    keys:
+      #第一行
+      - {click: IPA_raised, long_click: IPA_raised_side, swipe_left: '̞', swipe_right: '˕', hint: ' ◌̞   ◌˕'}
+      - {click: IPA_more_rounded_below, long_click: IPA_more_rounded_above, swipe_left: '̜', swipe_right: '͑', hint: '◌̜   ◌͑'}
+      - {click: IPA_fronted, long_click: IPA_fronted_side, swipe_left: '̠', swipe_right: '˗', hint: ' ◌̠   ◌˗'}
+      - {click: IPA_nasal_release}
+      - {click: IPA_lateral_release}
+      - {click: IPA_no_audible_release}
+      - {click: IPA_mid_central_vowel_release}
+      - {click: IPA_voiceless_dental_fricative_release}
+      - {click: IPA_voiceless_velar_fricative_release}
+      - {click: IPA_ejective}
+      #第二行
+      - {click: IPA_syllabic_below, long_click: IPA_syllabic_above}
+      - {click: IPA_non_syllabic_below, long_click: IPA_non_syllabic_above}
+      - {click: IPA_advanced_tongue_root, long_click: IPA_retracted_tongue_root}
+      - {click: IPA_centralized, long_click: IPA_mid-centralized}
+      - {click: IPA_nasalized}
+      - {click: IPA_dental_below, long_click: IPA_dental_above, swipe_left: '̻', swipe_right: '̺', hint: '◌̻   ◌̺'}
+      - {click: IPA_labialized, long_click: IPA_linguolabial}
+      - {click: IPA_palatalized}
+      - {click: IPA_velarized, long_click: IPA_velarized_or_pharyngealized}
+      - {click: IPA_pharyngealized, long_click: IPA_velarized_or_pharyngealized}
+      #第三行
+      - {click: Keyboard_IPA_symbol_1, width: 15, key_text_offset_y: 0}
+      - {click: IPA_voiceless_below, long_click: IPA_voiceless_above}
+      - {click: IPA_voiced}
+      - {click: IPA_aspirated}
+      - {click: IPA_breathy_voiced}
+      - {click: IPA_creaky_voiced}
+      - {click: IPA_nasalized}
+      - {click: IPA_rhoticity}
+      - {click: BackSpace, width: 15, key_text_offset_y: 0}
+      #第四行
+      - {click: Keyboard_IPA, width: 15, key_text_offset_y: 0}
+      - {click: IPA_tie_bar_above, width: 12.5}
+      - {click: space, width: 45, swipe_left: "Left", swipe_right: "Right"}
+      - {click: IPA_tie_bar_below, width: 12.5}
+      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      #第五行
+      - {width: 10}
+      - {click: Keyboard_default, width: 20, height: *sub_key_height}
+      - {click: Keyboard_Greek, width: 20}
+      - {click: Keyboard_Cyrillic, width: 20}
+      - {click: Keyboard_IPA_Selected, width: 20, key_back_color: enter_bg_color, key_text_color: off_key_text_color}
+      - {width: 10}
+
