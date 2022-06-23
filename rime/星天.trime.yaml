@@ -759,7 +759,7 @@ preset_keyboards:
       - {click: JapaneseNum}
       - {click: 'ta', label: た, swipe_left: ti, swipe_up: tu, swipe_right: te, swipe_down: to}
       - {click: 'na', label: な, swipe_left: ni, swipe_up: nu, swipe_right: ne, swipe_down: 'no'}
-      - {click: 'ha', label: は, swipe_left: hi, swipe_up: fu, swipe_right: he, swipe_down: ho}
+      - {click: 'ha', label: は, swipe_left: hi, swipe_up: hu, swipe_right: he, swipe_down: ho}
       - {click: '', label: '^_^'}
       #第三行
       - {click: Pigeon}
