@@ -1,4 +1,4 @@
-![README_assets/星天.svg](https://socialify.git.ci/Wenti-D/Astralwelkin/image?description=1&descriptionEditable=A%20dark%20Trime%20theme.%20%E4%B8%80%E4%B8%AA%E6%9A%97%E8%89%B2%E7%B3%BB%E5%90%8C%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%BB%E9%A2%98%E3%80%82&font=Inter&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FWenti-D%2FAstralwelkin%2F6b6a6059f5760c8c97e2f3edff97daa62a1e76da%2FREADME_assets%2F%25E6%2598%259F%25E5%25A4%25A9.svg&name=1&owner=1&stargazers=1&theme=Dark)
+![README_assets/Astralwelkin.svg](https://socialify.git.ci/Wenti-D/Astralwelkin/image?description=1&font=Inter&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FWenti-D%2FAstralwelkin%2Fmain%2FREADME_assets%2FAstralwelkin.svg&name=1&owner=1&pulls=1&stargazers=1&theme=Dark)
 
 ## 这是什么？
 

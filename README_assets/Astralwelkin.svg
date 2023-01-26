@@ -2,78 +2,21 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="120mm"
+   width="40mm"
    height="40mm"
-   viewBox="0 0 120 40.000001"
+   viewBox="0 0 40 40.000001"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="Astralwelkin.svg"
-   inkscape:export-filename="..\..\Repos\Astralwelkin\README_assets\Astralwelkin.svg"
-   inkscape:export-xdpi="72"
-   inkscape:export-ydpi="72"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     width="40mm"
-     inkscape:zoom="1.33"
-     inkscape:cx="191.35338"
-     inkscape:cy="89.473684"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
-     scale-x="1"
-     inkscape:showpageshadow="0"
-     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="Graph"
-     sodipodi:insensitive="true">
-    <path
-       style="fill:#11012f;fill-opacity:1;stroke:none;stroke-width:0.727094px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 39.178748,39.178748 h -59.568177 c 0,-27.146991 21.8780486,-47.3906153 59.006844,-47.1717805 z"
-       id="path9519"
-       sodipodi:nodetypes="cccc" />
-    <path
-       style="fill:#01113e;fill-opacity:1;stroke:none;stroke-width:0.542047px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 39.178749,39.178749 H 0.64850381 c 0,-23.325365 14.15129119,-40.7191869 38.16716019,-40.5311577 z"
-       id="path9519-5"
-       sodipodi:nodetypes="cccc" />
-    <path
-       style="fill:#011a4c;fill-opacity:1;stroke:none;stroke-width:0.334368px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 39.178748,39.178748 H 11.181455 c 0,-12.214864 10.282775,-21.323538 27.733464,-21.225073 z"
-       id="path9519-5-8"
-       sodipodi:nodetypes="cccc" />
-    <path
-       style="fill:#fffcd1;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -14.344776,12.450181 c 23.7080876,0 27.065612,-3.2776924 27.065612,-23.005771 0,17.6321841 2.071853,21.760066 26.237218,22.671479 l 0.0217,0.529668 c -20.893496,1.023874 -25.109082,5.67032 -25.956528,26.542195 l -0.437511,0.0244 C 11.653244,14.460605 7.0594844,12.450181 -14.344776,12.450181 Z"
-       id="path6028"
-       sodipodi:nodetypes="ccccccc" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Text"
      style="display:inline">
     <g
-       id="g983">
+       id="g983"
+       transform="translate(-40.000245)">
       <path
          d="m 60.360602,10.053797 h 9.465715 v 1.879597 h -9.465715 z m 0,-2.5230618 h 9.465715 V 9.3764649 H 60.360602 Z M 59.564737,6.8195366 V 12.644592 H 70.656048 V 6.8195366 Z m 1.219198,5.9605224 c -0.728132,1.557863 -1.930397,3.064927 -3.217327,4.063992 0.220132,0.118533 0.541865,0.372532 0.694265,0.507999 0.626532,-0.541866 1.269997,-1.219198 1.84573,-1.981197 h 4.521191 v 1.913463 h -4.961457 v 0.728132 h 4.961457 v 2.269062 h -6.891853 v 0.745066 H 72.383245 V 20.28151 h -6.92572 v -2.269062 h 5.198523 v -0.728132 h -5.198523 v -1.913463 h 5.875855 v -0.745065 h -5.875855 v -1.574797 h -0.829731 v 1.574797 h -3.979326 c 0.355599,-0.524932 0.677332,-1.066798 0.948265,-1.625597 z"
          id="path5909"
@@ -87,7 +30,7 @@
        aria-label="ASTRALWELKIN"
        id="text33940"
        style="font-weight:200;font-size:7.76111px;line-height:1.25;font-family:Urbanist;-inkscape-font-specification:'Urbanist, Ultra-Light';fill:#fffcd1;stroke-width:0.264583"
-       transform="translate(0,0.52916667)">
+       transform="translate(-40.000245,0.52916667)">
       <path
          d="m 54.821113,26.865525 h 0.457906 l 1.979083,5.432777 H 56.904971 L 56.443185,31.02936 h -2.782358 l -0.461786,1.268942 H 52.84203 Z m -1.039989,3.830108 h 2.537883 l -1.268941,-3.480858 z"
          id="path5866" />
@@ -125,18 +68,5 @@
          d="m 98.954509,32.298302 v -5.432777 h 0.364772 l 3.162649,4.831291 v -4.831291 h 0.33373 v 5.432777 h -0.35701 l -3.170414,-4.831291 v 4.831291 z"
          id="path5888" />
     </g>
-  </g>
-  <g
-     inkscape:label="Frame"
-     inkscape:groupmode="layer"
-     id="layer1"
-     sodipodi:insensitive="true">
-    <rect
-       style="opacity:1;mix-blend-mode:normal;fill:none;stroke:#dfa706;stroke-width:1.642;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       id="rect846"
-       width="38.357506"
-       height="38.357506"
-       x="0.82124501"
-       y="0.82124501" />
   </g>
 </svg>
