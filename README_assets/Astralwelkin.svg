@@ -7,8 +7,11 @@
    viewBox="0 0 120 40.000001"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
-   sodipodi:docname="星天.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="Astralwelkin.svg"
+   inkscape:export-filename="..\..\Repos\Astralwelkin\README_assets\Astralwelkin.svg"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,21 +28,23 @@
      showgrid="false"
      width="40mm"
      inkscape:zoom="1.33"
-     inkscape:cx="195.48872"
+     inkscape:cx="191.35338"
      inkscape:cy="89.473684"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="text19125"
-     scale-x="1" />
+     inkscape:current-layer="layer1"
+     scale-x="1"
+     inkscape:showpageshadow="0"
+     inkscape:deskcolor="#505050" />
   <defs
      id="defs2" />
   <g
      inkscape:groupmode="layer"
      id="layer3"
-     inkscape:label="天"
+     inkscape:label="Graph"
      sodipodi:insensitive="true">
     <path
        style="fill:#11012f;fill-opacity:1;stroke:none;stroke-width:0.727094px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -56,26 +61,27 @@
        d="M 39.178748,39.178748 H 11.181455 c 0,-12.214864 10.282775,-21.323538 27.733464,-21.225073 z"
        id="path9519-5-8"
        sodipodi:nodetypes="cccc" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="星">
     <path
        style="fill:#fffcd1;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m -14.344776,12.450181 c 23.7080876,0 27.065612,-3.2776924 27.065612,-23.005771 0,17.6321841 2.071853,21.760066 26.237218,22.671479 l 0.0217,0.529668 c -20.893496,1.023874 -25.109082,5.67032 -25.956528,26.542195 l -0.437511,0.0244 C 11.653244,14.460605 7.0594844,12.450181 -14.344776,12.450181 Z"
        id="path6028"
        sodipodi:nodetypes="ccccccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Text"
+     style="display:inline">
     <g
-       aria-label="星   天"
-       id="text19125"
-       style="font-weight:300;font-size:16.9333px;line-height:1.25;font-family:'Source Han Sans SC';-inkscape-font-specification:'Source Han Sans SC,  weight=250';fill:#fffcd1;stroke-width:0.264583">
+       id="g983">
       <path
          d="m 60.360602,10.053797 h 9.465715 v 1.879597 h -9.465715 z m 0,-2.5230618 h 9.465715 V 9.3764649 H 60.360602 Z M 59.564737,6.8195366 V 12.644592 H 70.656048 V 6.8195366 Z m 1.219198,5.9605224 c -0.728132,1.557863 -1.930397,3.064927 -3.217327,4.063992 0.220132,0.118533 0.541865,0.372532 0.694265,0.507999 0.626532,-0.541866 1.269997,-1.219198 1.84573,-1.981197 h 4.521191 v 1.913463 h -4.961457 v 0.728132 h 4.961457 v 2.269062 h -6.891853 v 0.745066 H 72.383245 V 20.28151 h -6.92572 v -2.269062 h 5.198523 v -0.728132 h -5.198523 v -1.913463 h 5.875855 v -0.745065 h -5.875855 v -1.574797 h -0.829731 v 1.574797 h -3.979326 c 0.355599,-0.524932 0.677332,-1.066798 0.948265,-1.625597 z"
-         id="path5909" />
+         id="path5909"
+         style="font-weight:300;font-size:16.9333px;line-height:1.25;font-family:'Source Han Sans SC';-inkscape-font-specification:'Source Han Sans SC,  weight=250';fill:#fffcd1;stroke-width:0.264583" />
       <path
          d="m 83.779255,12.746192 v 0.829732 h 6.502387 c -0.558798,2.539995 -2.201329,5.198523 -6.824119,7.213585 0.186266,0.169333 0.423332,0.474133 0.541865,0.677332 4.690524,-2.065862 6.434654,-4.842923 7.07812,-7.501451 1.28693,3.657592 3.708392,6.31612 7.230519,7.501451 0.118533,-0.237066 0.355599,-0.541865 0.541865,-0.711198 -3.505193,-1.066798 -5.909721,-3.657593 -7.095052,-7.179719 h 6.756386 V 12.746192 H 91.29764 c 0.1016,-0.778932 0.118534,-1.54093 0.118534,-2.269063 V 8.2927337 h 6.333054 V 7.4799353 H 84.354987 v 0.8127984 h 6.214522 v 2.1674623 c 0,0.728132 -0.01693,1.490131 -0.135467,2.285996 z"
-         id="path5911" />
+         id="path5911"
+         style="font-weight:300;font-size:16.9333px;line-height:1.25;font-family:'Source Han Sans SC';-inkscape-font-specification:'Source Han Sans SC,  weight=250';fill:#fffcd1;stroke-width:0.264583" />
     </g>
     <g
        aria-label="ASTRALWELKIN"
@@ -121,7 +127,7 @@
     </g>
   </g>
   <g
-     inkscape:label="框"
+     inkscape:label="Frame"
      inkscape:groupmode="layer"
      id="layer1"
      sodipodi:insensitive="true">
