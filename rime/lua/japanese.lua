@@ -1,6 +1,108 @@
 local function japanese()
     local preedit = ''
 
+    local function processor_init(env)
+        env.code_init = { 'q', 'k', 's', 't', 'n', 'h', 'm', 'y', 'r', 'w', 'x', 'l' }
+        env.code_end = { 'a', 'i', 'u', 'e', 'o' }
+        env.kana_table = {
+            { 'あ', 'い', 'う', 'え', 'お' },
+            { 'か', 'き', 'く', 'け', 'こ' },
+            { 'さ', 'し', 'す', 'せ', 'そ' },
+            { 'た', 'ち', 'つ', 'て', 'と' },
+            { 'な', 'に', 'ぬ', 'ね', 'の' },
+            { 'は', 'ひ', 'ふ', 'へ', 'ほ' },
+            { 'ま', 'み', 'む', 'め', 'も' },
+            { 'や', 'い', 'ゆ', 'え', 'よ' },
+            { 'ら', 'り', 'る', 'れ', 'ろ' },
+            { 'わ', 'い', 'う', 'え', 'を' },
+            { 'ぁ', 'ぃ', 'ぅ', 'ぇ', 'ぉ' },
+            { 'ゃ', 'ぃ', 'ゅ', 'ぇ', 'ょ' },
+        }
+        env.code_sp = { 'xx', 'vu', 'nn', '--' }
+        env.kana_sp = { 'っ', 'ゔ', 'ん', 'ー' }
+        env.kana_cycle_1 = {
+            'か', 'き', 'く', 'け', 'こ', 'さ', 'し', 'す', 'せ', 'そ', 'た', 'ち', 'て', 'と', 'あ',
+            'い', 'え', 'お', 'や', 'ゆ', 'よ',
+            'が', 'ぎ', 'ぐ', 'げ', 'ご', 'ざ', 'じ', 'ず', 'ぜ', 'そ', 'だ', 'ぢ', 'で', 'ど', 'ぁ',
+            'ぃ', 'ぇ', 'ぉ', 'ゃ', 'ゅ', 'ょ'
+        } -- 21x
+        env.kana_cycle_2 = {
+            'は', 'ひ', 'ふ', 'へ', 'ほ', 'つ', 'う',
+            'ば', 'び', 'ぶ', 'べ', 'ぼ', 'っ', 'ぅ',
+            'ぱ', 'ぴ', 'ぷ', 'ぺ', 'ぽ', 'づ', 'ゔ'
+        }
+
+        env.tmp_code = ''
+        env.Rejected, env.Accepted, env.Noop = 0, 1, 2
+    end
+
+    local function processor(key_e, env)
+        local engine = env.engine
+        local context = engine.context
+        local input = context.input
+        local composition = context.composition
+        local segmentation = composition:toSegmentation()
+        local current_keycode = key_e.keycode
+        local current_keychar = string.format('%c', current_keycode)
+        local current_keyrepr = key_e:repr()
+
+        if (not context:get_option("ascii_mode")) then
+            if (current_keycode >= 0x61 and current_keycode <= 0x7a) or current_keycode == 0x2d then
+                env.tmp_code = env.tmp_code .. current_keychar
+                if #env.tmp_code == 2 then
+                    local kana_pos = { 0, 0 }
+                    for index, value in ipairs(env.code_init) do
+                        if value == string.sub(env.tmp_code, 1, 1) then
+                            kana_pos[1] = index
+                            break
+                        end
+                    end
+                    for index, value in ipairs(env.code_end) do
+                        if value == string.sub(env.tmp_code, 2) then
+                            kana_pos[2] = index
+                            break
+                        end
+                    end
+                    if kana_pos[1] ~= 0 and kana_pos[2] ~= 0 then
+                        context:push_input(env.kana_table[kana_pos[1]][kana_pos[2]])
+                    else
+                        for index, value in ipairs(env.code_sp) do
+                            if value == env.tmp_code then
+                                context:push_input(env.kana_sp[index])
+                                break
+                            end
+                        end
+                    end
+                    env.tmp_code = ''
+                end
+                return env.Accepted
+            elseif current_keycode == 0x5f then
+                local last_kana = string.sub(context, -3)
+                for index, value in ipairs(env.kana_cycle_1) do
+                    if value == last_kana then
+                        input = string.sub(input, 1, -4) .. env.kana_cycle_1[(index + 21) % 42]
+                        break
+                    end
+                end
+                for index, value in ipairs(env.kana_cycle_2) do
+                    if value == last_kana then
+                        input = string.sub(input, 1, -4) .. env.kana_cycle_2[(index + 7) % 21]
+                        break
+                    end
+                end
+                return env.Accepted
+            elseif current_keyrepr == 'BackSpace' and context:is_composing() then
+                if segmentation:get_confirmed_position() == 0 then
+                    context:pop_input(3)
+                else
+                    segmentation:pop_back()
+                end
+                return env.Accepted
+            end
+        end
+        return env.Noop
+    end
+
     local function segmentor(segmentation, env)
         local engine = env.engine
         local context = engine.context
@@ -8,106 +110,18 @@ local function japanese()
         if not context:get_option("ascii_mode") then
             preedit = segmentation.input
 
-            preedit = preedit:gsub('qa_', 'xa')
-            preedit = preedit:gsub('qi_', 'xi')
-            preedit = preedit:gsub('qu_', 'xu')
-            preedit = preedit:gsub('xu_', 'vu')
-            preedit = preedit:gsub('qe_', 'xe')
-            preedit = preedit:gsub('qo_', 'xo')
-            preedit = preedit:gsub('xa_', 'qa')
-            preedit = preedit:gsub('xi_', 'qi')
-            preedit = preedit:gsub('vu_', 'qu')
-            preedit = preedit:gsub('xe_', 'qe')
-            preedit = preedit:gsub('xo_', 'qo')
-            preedit = preedit:gsub('la_', 'ya')
-            preedit = preedit:gsub('lu_', 'yu')
-            preedit = preedit:gsub('lo_', 'yo')
-
-            preedit = preedit:gsub('ka_', 'ga')
-            preedit = preedit:gsub('ki_', 'gi')
-            preedit = preedit:gsub('ku_', 'gu')
-            preedit = preedit:gsub('ke_', 'ge')
-            preedit = preedit:gsub('ko_', 'go')
-            preedit = preedit:gsub('ga_', 'ka')
-            preedit = preedit:gsub('gi_', 'ki')
-            preedit = preedit:gsub('gu_', 'ku')
-            preedit = preedit:gsub('ge_', 'ke')
-            preedit = preedit:gsub('go_', 'ko')
-
-            preedit = preedit:gsub('sa_', 'za')
-            preedit = preedit:gsub('si_', 'zi')
-            preedit = preedit:gsub('su_', 'zu')
-            preedit = preedit:gsub('se_', 'ze')
-            preedit = preedit:gsub('so_', 'zo')
-            preedit = preedit:gsub('za_', 'sa')
-            preedit = preedit:gsub('zi_', 'si')
-            preedit = preedit:gsub('zu_', 'su')
-            preedit = preedit:gsub('ze_', 'se')
-            preedit = preedit:gsub('zo_', 'so')
-
-            preedit = preedit:gsub('ta_', 'da')
-            preedit = preedit:gsub('ti_', 'di')
-            preedit = preedit:gsub('tu_', 'xx')
-            preedit = preedit:gsub('xx_', 'du')
-            preedit = preedit:gsub('te_', 'de')
-            preedit = preedit:gsub('to_', 'do')
-            preedit = preedit:gsub('da_', 'ta')
-            preedit = preedit:gsub('di_', 'ti')
-            preedit = preedit:gsub('du_', 'tu')
-            preedit = preedit:gsub('de_', 'te')
-            preedit = preedit:gsub('do_', 'to')
-
-            preedit = preedit:gsub('na_', 'na')
-            preedit = preedit:gsub('ni_', 'ni')
-            preedit = preedit:gsub('nu_', 'nu')
-            preedit = preedit:gsub('ne_', 'ne')
-            preedit = preedit:gsub('no_', 'no')
-
-            preedit = preedit:gsub('ha_', 'ba')
-            preedit = preedit:gsub('hi_', 'bi')
-            preedit = preedit:gsub('hu_', 'bu')
-            preedit = preedit:gsub('he_', 'be')
-            preedit = preedit:gsub('ho_', 'bo')
-            preedit = preedit:gsub('ba_', 'pa')
-            preedit = preedit:gsub('bi_', 'pi')
-            preedit = preedit:gsub('bu_', 'pu')
-            preedit = preedit:gsub('be_', 'pe')
-            preedit = preedit:gsub('bo_', 'po')
-            preedit = preedit:gsub('pa_', 'ha')
-            preedit = preedit:gsub('pi_', 'hi')
-            preedit = preedit:gsub('pu_', 'hu')
-            preedit = preedit:gsub('pe_', 'he')
-            preedit = preedit:gsub('po_', 'ho')
-
-            preedit = preedit:gsub('ma_', 'ma')
-            preedit = preedit:gsub('mi_', 'mi')
-            preedit = preedit:gsub('mu_', 'mu')
-            preedit = preedit:gsub('me_', 'me')
-            preedit = preedit:gsub('mo_', 'mo')
-
-            preedit = preedit:gsub('ya_', 'la')
-            preedit = preedit:gsub('yu_', 'lu')
-            preedit = preedit:gsub('yo_', 'lo')
-            preedit = preedit:gsub('la_', 'ya')
-            preedit = preedit:gsub('lu_', 'yu')
-            preedit = preedit:gsub('lo_', 'yo')
-
-            preedit = preedit:gsub('ra_', 'ra')
-            preedit = preedit:gsub('ri_', 'ri')
-            preedit = preedit:gsub('ru_', 'ru')
-            preedit = preedit:gsub('re_', 're')
-            preedit = preedit:gsub('ro_', 'ro')
-
-            preedit = preedit:gsub('va_', 'wa')
-            preedit = preedit:gsub('wa_', 'va')
-
-            context.input = preedit
         end
 
         return true
     end
 
-    return { segmentor = segmentor }
+    return {
+        processor = {
+            init = processor_init,
+            func = processor
+        },
+        segmentor = segmentor
+    }
 end
 
 return japanese

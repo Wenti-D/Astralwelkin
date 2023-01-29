@@ -20,6 +20,7 @@ switches:
 
 engine:
   processors:
+    - lua_processor@japanese_processor
     - ascii_composer
     - recognizer
     - key_binder
@@ -36,6 +37,7 @@ engine:
     - punct_segmentor
     - fallback_segmentor
   translators:
+    # - lua_translator@japanese_translator
     - punct_translator
     - script_translator
   filters:
@@ -43,7 +45,7 @@ engine:
     - uniquifier
 
 speller:
-  alphabet: 'abcdefghijklmnopqrstuvwxyz-_'
+  alphabet: 'あabcdefghijklmnopqrstuvwxyz-_'
   initials: 'qkstnhmyrwvgzdbplx'
   delimiter: " '"
   algebra:

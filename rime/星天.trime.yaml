@@ -754,7 +754,7 @@ preset_keyboards:
       - {click: 'qa', label: あ, swipe_left: qi, swipe_up: qu, swipe_right: qe, swipe_down: qo}
       - {click: 'ka', label: か, swipe_left: ki, swipe_up: ku, swipe_right: ke, swipe_down: ko}
       - {click: 'sa', label: さ, swipe_left: si, swipe_up: su, swipe_right: se, swipe_down: so}
-      - {click: BackSpace, has_menu: JapaneseBackSpace}
+      - {click: BackSpace}
       #第二行
       - {click: JapaneseNum}
       - {click: 'ta', label: た, swipe_left: ti, swipe_up: tu, swipe_right: te, swipe_down: to}
