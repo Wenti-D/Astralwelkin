@@ -96,6 +96,7 @@ local function japanese()
                     context:pop_input(3)
                 else
                     segmentation:pop_back()
+                    context.caret_pos = string.len(input)
                 end
                 return env.Accepted
             end
