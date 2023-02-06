@@ -45,7 +45,7 @@ engine:
     - uniquifier
 
 speller:
-  alphabet: 'あabcdefghijklmnopqrstuvwxyz-_'
+  alphabet: 'abcdefghijklmnopqrstuvwxyz-_'
   initials: 'qkstnhmyrwvgzdbplx'
   delimiter: " '"
   algebra:
