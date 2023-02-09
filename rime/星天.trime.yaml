@@ -1,7 +1,7 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: "20220619@3.2.6"  #日期@Trime版本
+config_version: "20230207@3.2.10" #日期@Trime版本
 name: 星天                        #方案名称
 author: 'Windy_D'                 #作者信息
 
@@ -39,6 +39,7 @@ style:
     - bopomofo
     - japanese_12_key
     - japanese_num_12_key
+    - number
     - basic_symbol
     - math_symbol
     - Greek
@@ -470,20 +471,24 @@ liquid_keyboard:
   author: 'Windy_D'
   row: 6              #竖屏每屏最多按键行数
   row_land: 4         #横屏每屏最多按键行数
-  key_height: 44      #竖屏按键高度
-  key_height_land: 36 #横屏按键高度
+  key_height: 22      #竖屏按键高度
+  key_height_land: 18 #横屏按键高度
   single_width: 60    #single类型的按键宽度
   vertical_gap: 4     #纵向按键间隙
   margin_x: 2         #横向按键间隙的一半
   keyboards:
     - exit
+    - candidate
     - clipboard
   clipboard:
     type: CLIPBOARD
     name: 剪贴板
+  candidate:
+    type: CANDIDATE
+    name: 候选
   exit:
-    name: 返回
     type: NO_KEY
+    name: 返回
     keys: EXIT
 
 #键盘布局
@@ -769,7 +774,7 @@ preset_keyboards:
       - {click: space}
       #第四行
       - {click: Keyboard_clipboard, long_click: Theme_settings}
-      - {click: Menu, has_menu: 'Transform', long_click: IME_switch}
+      - {click: Menu, composing: 'Transform', long_click: IME_switch}
       - {click: 'wa', label: わ, swipe_left: wo, swipe_up: nn, swipe_right: '--', swipe_down: ～}
       - {click: 、, swipe_left: 。, swipe_up: ？, swipe_right: ！, swipe_down: …}
       - {click: Return, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
@@ -807,6 +812,39 @@ preset_keyboards:
       - {click: JapaneseNumBracket, swipe_left: ')', swipe_up: '[', swipe_right: ']'}
       - {click: '0', swipe_left: 〜, swipe_up: …, hint: '〜…'}
       - {click: JapaneseNumComma, swipe_left: '.', swipe_up: '-', swipe_right: '/'}
+      - {click: Return, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+
+  number:
+    name: 数字小键盘
+    author: 'Windy_D'
+    ascii_mode: 1
+    width: 20
+    height: 47
+    key_text_offset_y: -.6    #按键文本偏移（下正上负）
+    keys:
+      #第一行
+      - {click: '+'}
+      - {click: '1'}
+      - {click: '2'}
+      - {click: '3'}
+      - {click: BackSpace}
+      #第二行
+      - {click: '-'}
+      - {click: '4'}
+      - {click: '5'}
+      - {click: '6'}
+      - {click: space}
+      #第三行
+      - {click: '*'}
+      - {click: '7'}
+      - {click: '8'}
+      - {click: '9'}
+      - {click: '%'}
+      #第四行
+      - {click: '/'}
+      - {click: '_'}
+      - {click: '0'}
+      - {click: '.'}
       - {click: Return, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   basic_symbol:
