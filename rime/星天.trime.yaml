@@ -1,7 +1,7 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: "20230207@3.2.10" #日期@Trime版本
+config_version: "20230319@3.2.12" #日期@Trime版本
 name: 星天                        #方案名称
 author: 'Windy_D'                 #作者信息
 
@@ -497,6 +497,7 @@ preset_keyboards:
     name: 普通36键
     author: 'Windy_D'
     ascii_mode: 0
+    reset_ascii_mode: true
     width: 10
     #height默认，不写
     key_text_offset_y: -.6    #按键文本偏移（下正上负）
@@ -559,6 +560,7 @@ preset_keyboards:
     name: 西文36键
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 10
     #height默认，不写
     key_text_offset_y: -.6    #按键文本偏移（下正上负）
@@ -621,6 +623,7 @@ preset_keyboards:
     name: 微软双拼键盘
     author: 'Windy_D'
     ascii_mode: 0
+    reset_ascii_mode: true
     width: 10
     #height默认，不写
     key_text_offset_y: -.6    #按键文本偏移（下正上负）
@@ -683,6 +686,7 @@ preset_keyboards:
     author: "Windy_D"
     ascii_mode: 0
     ascii_keyboard: letter    #在3.2.6，这功能还没实现……
+    reset_ascii_mode: true
     width: 10
     # height: 44
     key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
@@ -746,6 +750,7 @@ preset_keyboards:
     name: 日文12键
     author: 'Windy_D'
     ascii_mode: 0
+    reset_ascii_mode: true
     width: 20
     height: *jpn_key_height
     #key_text_offset_y: -.6    #按键文本偏移（下正上负）
@@ -783,6 +788,7 @@ preset_keyboards:
     name: 日文数字12键
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 20
     height: *jpn_key_height
     #key_text_offset_y: -.6    #按键文本偏移（下正上负）
@@ -818,6 +824,7 @@ preset_keyboards:
     name: 数字小键盘
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 20
     height: 47
     key_text_offset_y: -.6    #按键文本偏移（下正上负）
@@ -851,6 +858,7 @@ preset_keyboards:
     name: 基本符号键盘
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 10
     height: *26_key_height
     vertical_gap: *26_key_vert_gap
@@ -901,6 +909,7 @@ preset_keyboards:
     name: 数学符号键盘
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 10
     height: *26_key_height
     vertical_gap: *26_key_vert_gap
@@ -951,6 +960,7 @@ preset_keyboards:
     name: 希腊字母键盘
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 10
     key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
     key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
@@ -1006,6 +1016,7 @@ preset_keyboards:
     name: 希腊字母符号键盘
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 10
     key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
     key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
@@ -1060,6 +1071,7 @@ preset_keyboards:
     name: 西里尔字母键盘
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 9
     #height: *26_key_height
     #vertical_gap: *26_key_vert_gap
@@ -1124,6 +1136,7 @@ preset_keyboards:
     name: 西里尔字母符号键盘
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 10
     key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
     key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
@@ -1178,6 +1191,7 @@ preset_keyboards:
     name: 国际音标键盘（第一页）
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: *ipa_key_width
     height: *ipa_key_height
     vertical_gap: *ipa_key_vert_gap
@@ -1269,6 +1283,7 @@ preset_keyboards:
     name: 国际音标键盘（第二页）
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: *ipa_key_width
     height: *ipa_key_height
     vertical_gap: *ipa_key_vert_gap
@@ -1355,6 +1370,7 @@ preset_keyboards:
     name: 国际音标键盘（第三页）
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: *ipa_key_width
     height: *ipa_key_height
     vertical_gap: *ipa_key_vert_gap
@@ -1446,6 +1462,7 @@ preset_keyboards:
     name: 国际音标符号（第一页）
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 10
     key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
     key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
@@ -1500,6 +1517,7 @@ preset_keyboards:
     name: 国际音标符号（第二页）
     author: 'Windy_D'
     ascii_mode: 1
+    reset_ascii_mode: true
     width: 10
     key_hint_offset_y: 2.3    #按键下方注释偏移（下正上负）
     key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
