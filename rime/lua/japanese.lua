@@ -2,6 +2,7 @@ local function japanese()
     local preedit = ''
 
     local function processor_init(env)
+        env.engine.context:set_option("ascii_mode", false)
         env.code_init = { 'q', 'k', 'g', 's', 'z', 't', 'd', 'n', 'h', 'b', 'p', 'm', 'y', 'r', 'w', 'x', 'l' }
         env.code_end = { 'a', 'i', 'u', 'e', 'o' }
         env.kana_table = {
@@ -23,17 +24,18 @@ local function japanese()
             { 'ぁ', 'ぃ', 'ぅ', 'ぇ', 'ぉ' },
             { 'ゃ', 'ぃ', 'ゅ', 'ぇ', 'ょ' },
         }
-        env.code_sp = { 'xx', 'vu', 'nn', '--' }
-        env.kana_sp = { 'っ', 'ゔ', 'ん', 'ー' }
+        env.code_sp = { 'xx', 'vu', 'va', 'nn', '--' }
+        env.kana_sp = { 'っ', 'ゔ', 'ゎ', 'ん', 'ー' }
         env.code_cycle_1 = {
             'k', 's', 't', 'q', 'y',
             'g', 'z', 'd', 'x', 'l'
         }
         env.code_cycle_2 = {
-            'h', 'tu', 'qu',
-            'b', 'xx', 'xu',
-            'p', 'du', 'vu',
+            'tu', 'qu',
+            'xx', 'xu',
+            'du', 'vu',
         }
+        env.code_cycle_3 = { 'h', 'b', 'p' }
 
         env.Rejected, env.Accepted, env.Noop = 0, 1, 2
     end
@@ -49,19 +51,43 @@ local function japanese()
 
         if (not context:get_option("ascii_mode")) then
             if current_keycode == 0x5f then
-                local last_kana_code = string.sub(context, -2)
+                local last_kana_code = string.sub(input, -2)
                 local switched = false
-                for index, value in ipairs(env.code_cycle_2) do
-                    if value == last_kana_code then
-                        input = string.sub(input, 1, -3) .. env.code_cycle_2[(index + 3) % 9]
-                        switched = true
-                        break
+                if last_kana_code == "wa" then
+                    context:pop_input(2)
+                    context:push_input("va")
+                    switched = true
+                end
+                if last_kana_code == "va" then
+                    context:pop_input(2)
+                    context:push_input("wa")
+                    switched = true
+                end
+                if not switched then
+                    for index, value in ipairs(env.code_cycle_3) do
+                        if value == string.sub(last_kana_code, 1, 1) then
+                            context:pop_input(2)
+                            context:push_input(env.code_cycle_3[index % 3 + 1] .. string.sub(last_kana_code, 2, 2))
+                            switched = true
+                            break
+                        end
+                    end
+                end
+                if not switched then
+                    for index, value in ipairs(env.code_cycle_2) do
+                        if value == last_kana_code then
+                            context:pop_input(2)
+                            context:push_input(env.code_cycle_2[(index + 1) % 6 + 1])
+                            switched = true
+                            break
+                        end
                     end
                 end
                 if not switched then
                     for index, value in ipairs(env.code_cycle_1) do
-                        if value == last_kana_code then
-                            input = string.sub(input, 1, -3) .. env.code_cycle_1[(index + 5) % 10]
+                        if value == string.sub(last_kana_code, 1, 1) then
+                            context:pop_input(2)
+                            context:push_input(env.code_cycle_1[(index + 4) % 10 + 1] .. string.sub(last_kana_code, 2, 2))
                             break
                         end
                     end
