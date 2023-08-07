@@ -837,7 +837,8 @@ preset_keyboards:
     reset_ascii_mode: true
     width: 20
     height: 47
-    key_text_offset_y: -.6    #按键文本偏移（下正上负）
+    key_text_offset_y: -.4    #按键文本偏移（下正上负）
+    key_symbol_offset_y: -1.6 #按键上方注释偏移（下正上负）
     keys:
       #第一行
       - {click: '+'}
@@ -852,13 +853,13 @@ preset_keyboards:
       - {click: '6'}
       - {click: space}
       #第三行
-      - {click: '*'}
+      - {click: '*', long_click: paste}
       - {click: '7'}
       - {click: '8'}
       - {click: '9'}
       - {click: '%'}
       #第四行
-      - {click: '/'}
+      - {click: '/', long_click: Keyboard_clipboard}
       - {click: '_'}
       - {click: '0'}
       - {click: '.'}
