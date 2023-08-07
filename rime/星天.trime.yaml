@@ -61,7 +61,7 @@ style:
   label_font: NotoSansCJKsc-Regular.otf         #悬浮窗序号字体
   candidate_font: NotoSansCJKsc-Regular.otf     #候选项字体
   comment_font: NotoSansCJKsc-Regular.otf       #候选项注释字体
-  hanb_font: simsunb.ttf                        #后备字体
+  hanb_font: PlangothicP1-Regular.allideo.ttf   #后备字体
   latin_font: NotoSansCJKsc-Regular.otf         #候选项及注释的拉丁字体
   key_font: NotoSansCJKsc-Regular.otf           #按键字体
   symbol_font: NotoSansCJKsc-Regular.otf        #按键注释字体

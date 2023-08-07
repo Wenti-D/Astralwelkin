@@ -33,7 +33,7 @@
 
 ### 下载用到的字体
 
-本主题所用的主要字体是 Noto Sans CJK SC，可以在 [Google Fonts](https://fonts.google.com/noto/specimen/Noto+Sans+SC) 下载到；扩展字体是 SimSun Ext-B，在 Windows 系统的电脑上就可以找到。
+本主题所用的主要字体是 Noto Sans CJK SC，可以在 [Google Fonts](https://fonts.google.com/noto/specimen/Noto+Sans+SC) 下载到；扩展字体是遍黑体 P1 allideo，可以前往其[项目地址](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project)下载。
 
 ### 将它放到你的设备上
 
@@ -84,7 +84,7 @@
 
 ### 1. 键盘上面的「摆烂」「鸽了」是什么？
 
-前者是还没想好放什么，后者是想好了但还没实现。欢迎提出建议！
+还没想好放什么 ~~（想好了也忘了）~~ ，欢迎提出建议！
 
 ### 2. 为什么没有 XXX？
 
