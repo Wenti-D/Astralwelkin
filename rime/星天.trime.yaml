@@ -1,7 +1,7 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: "20230319@3.2.12" #日期@Trime版本
+config_version: "20230807@3.2.13" #日期@Trime版本
 name: 星天                        #方案名称
 author: 'Windy_D'                 #作者信息
 
@@ -397,6 +397,16 @@ preset_keys:
   #自定义键盘
   Nothing: {label: '摆烂', send: ''}  #当还没想好放什么的时候就放这个吧
   Pigeon: {label: '鸽了', send: ''}   #或者这个也行
+  Num_1: {label: '1', commit: '1', functional: false}
+  Num_2: {label: '2', commit: '2', functional: false}
+  Num_3: {label: '3', commit: '3', functional: false}
+  Num_4: {label: '4', commit: '4', functional: false}
+  Num_5: {label: '5', commit: '5', functional: false}
+  Num_6: {label: '6', commit: '6', functional: false}
+  Num_7: {label: '7', commit: '7', functional: false}
+  Num_8: {label: '8', commit: '8', functional: false}
+  Num_9: {label: '9', commit: '9', functional: false}
+  Num_0: {label: '0', commit: '0', functional: false}
   Keyboard_basic_symbol: {label: '+★✓', send: Eisu_toggle, select: basic_symbol}
   Extra_keyboard: {label: 'αбʃ', send: Eisu_toggle, select: Greek}
   Keyboard_math_symbol: {label: 'Σ∫∂', send: Eisu_toggle, select: math_symbol}
@@ -505,16 +515,16 @@ preset_keyboards:
     key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
     keys:
       #第一行
-      - {click: '1', long_click: '¹', swipe_up: '¹', swipe_down: '₁', hint: '₁'}
-      - {click: '2', long_click: '²', swipe_up: '²', swipe_down: '₂', hint: '₂'}
-      - {click: '3', long_click: '³', swipe_up: '³', swipe_down: '₃', hint: '₃'}
-      - {click: '4', long_click: '⁴', swipe_up: '⁴', swipe_down: '₄', hint: '₄'}
-      - {click: '5', long_click: '⁵', swipe_up: '⁵', swipe_down: '₅', hint: '₅'}
-      - {click: '6', long_click: '⁶', swipe_up: '⁶', swipe_down: '₆', hint: '₆'}
-      - {click: '7', long_click: '⁷', swipe_up: '⁷', swipe_down: '₇', hint: '₇'}
-      - {click: '8', long_click: '⁸', swipe_up: '⁸', swipe_down: '₈', hint: '₈'}
-      - {click: '9', long_click: '⁹', swipe_up: '⁹', swipe_down: '₉', hint: '₉'}
-      - {click: '0', long_click: '⁰', swipe_up: '⁰', swipe_down: '₀', hint: '₀'}
+      - {click: Num_1, has_menu: '{space}1', long_click: '¹', swipe_up: '¹', swipe_down: '₁', hint: '₁'}
+      - {click: Num_2, has_menu: '{space}2', long_click: '²', swipe_up: '²', swipe_down: '₂', hint: '₂'}
+      - {click: Num_3, has_menu: '{space}3', long_click: '³', swipe_up: '³', swipe_down: '₃', hint: '₃'}
+      - {click: Num_4, has_menu: '{space}4', long_click: '⁴', swipe_up: '⁴', swipe_down: '₄', hint: '₄'}
+      - {click: Num_5, has_menu: '{space}5', long_click: '⁵', swipe_up: '⁵', swipe_down: '₅', hint: '₅'}
+      - {click: Num_6, has_menu: '{space}6', long_click: '⁶', swipe_up: '⁶', swipe_down: '₆', hint: '₆'}
+      - {click: Num_7, has_menu: '{space}7', long_click: '⁷', swipe_up: '⁷', swipe_down: '₇', hint: '₇'}
+      - {click: Num_8, has_menu: '{space}8', long_click: '⁸', swipe_up: '⁸', swipe_down: '₈', hint: '₈'}
+      - {click: Num_9, has_menu: '{space}9', long_click: '⁹', swipe_up: '⁹', swipe_down: '₉', hint: '₉'}
+      - {click: Num_0, has_menu: '{space}0', long_click: '⁰', swipe_up: '⁰', swipe_down: '₀', hint: '₀'}
       #第二行
       - {click: 'q', long_click: '`'}
       - {click: 'w', long_click: '|', swipe_left: '<', swipe_right: '>', hint: '<   >'}
@@ -568,16 +578,16 @@ preset_keyboards:
     key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
     keys:
       #第一行
-      - {click: '1', long_click: '¹', swipe_up: '¹', swipe_down: '₁', hint: '₁'}
-      - {click: '2', long_click: '²', swipe_up: '²', swipe_down: '₂', hint: '₂'}
-      - {click: '3', long_click: '³', swipe_up: '³', swipe_down: '₃', hint: '₃'}
-      - {click: '4', long_click: '⁴', swipe_up: '⁴', swipe_down: '₄', hint: '₄'}
-      - {click: '5', long_click: '⁵', swipe_up: '⁵', swipe_down: '₅', hint: '₅'}
-      - {click: '6', long_click: '⁶', swipe_up: '⁶', swipe_down: '₆', hint: '₆'}
-      - {click: '7', long_click: '⁷', swipe_up: '⁷', swipe_down: '₇', hint: '₇'}
-      - {click: '8', long_click: '⁸', swipe_up: '⁸', swipe_down: '₈', hint: '₈'}
-      - {click: '9', long_click: '⁹', swipe_up: '⁹', swipe_down: '₉', hint: '₉'}
-      - {click: '0', long_click: '⁰', swipe_up: '⁰', swipe_down: '₀', hint: '₀'}
+      - {click: Num_1, has_menu: '{space}1', long_click: '¹', swipe_up: '¹', swipe_down: '₁', hint: '₁'}
+      - {click: Num_2, has_menu: '{space}2', long_click: '²', swipe_up: '²', swipe_down: '₂', hint: '₂'}
+      - {click: Num_3, has_menu: '{space}3', long_click: '³', swipe_up: '³', swipe_down: '₃', hint: '₃'}
+      - {click: Num_4, has_menu: '{space}4', long_click: '⁴', swipe_up: '⁴', swipe_down: '₄', hint: '₄'}
+      - {click: Num_5, has_menu: '{space}5', long_click: '⁵', swipe_up: '⁵', swipe_down: '₅', hint: '₅'}
+      - {click: Num_6, has_menu: '{space}6', long_click: '⁶', swipe_up: '⁶', swipe_down: '₆', hint: '₆'}
+      - {click: Num_7, has_menu: '{space}7', long_click: '⁷', swipe_up: '⁷', swipe_down: '₇', hint: '₇'}
+      - {click: Num_8, has_menu: '{space}8', long_click: '⁸', swipe_up: '⁸', swipe_down: '₈', hint: '₈'}
+      - {click: Num_9, has_menu: '{space}9', long_click: '⁹', swipe_up: '⁹', swipe_down: '₉', hint: '₉'}
+      - {click: Num_0, has_menu: '{space}0', long_click: '⁰', swipe_up: '⁰', swipe_down: '₀', hint: '₀'}
       #第二行
       - {click: 'q', long_click: '`'}
       - {click: 'w', long_click: '|'}
@@ -631,16 +641,16 @@ preset_keyboards:
     key_symbol_offset_y: -2.2 #按键上方注释偏移（下正上负）
     keys:
       #第一行
-      - {click: '1', long_click: '¹', swipe_up: '¹', swipe_down: '₁', hint: '₁'}
-      - {click: '2', long_click: '²', swipe_up: '²', swipe_down: '₂', hint: '₂'}
-      - {click: '3', long_click: '³', swipe_up: '³', swipe_down: '₃', hint: '₃'}
-      - {click: '4', long_click: '⁴', swipe_up: '⁴', swipe_down: '₄', hint: '₄'}
-      - {click: '5', long_click: '⁵', swipe_up: '⁵', swipe_down: '₅', hint: '₅'}
-      - {click: '6', long_click: '⁶', swipe_up: '⁶', swipe_down: '₆', hint: '₆'}
-      - {click: '7', long_click: '⁷', swipe_up: '⁷', swipe_down: '₇', hint: '₇'}
-      - {click: '8', long_click: '⁸', swipe_up: '⁸', swipe_down: '₈', hint: '₈'}
-      - {click: '9', long_click: '⁹', swipe_up: '⁹', swipe_down: '₉', hint: '₉'}
-      - {click: '0', long_click: '⁰', swipe_up: '⁰', swipe_down: '₀', hint: '₀'}
+      - {click: Num_1, has_menu: '{space}1', long_click: '¹', swipe_up: '¹', swipe_down: '₁', hint: '₁'}
+      - {click: Num_2, has_menu: '{space}2', long_click: '²', swipe_up: '²', swipe_down: '₂', hint: '₂'}
+      - {click: Num_3, has_menu: '{space}3', long_click: '³', swipe_up: '³', swipe_down: '₃', hint: '₃'}
+      - {click: Num_4, has_menu: '{space}4', long_click: '⁴', swipe_up: '⁴', swipe_down: '₄', hint: '₄'}
+      - {click: Num_5, has_menu: '{space}5', long_click: '⁵', swipe_up: '⁵', swipe_down: '₅', hint: '₅'}
+      - {click: Num_6, has_menu: '{space}6', long_click: '⁶', swipe_up: '⁶', swipe_down: '₆', hint: '₆'}
+      - {click: Num_7, has_menu: '{space}7', long_click: '⁷', swipe_up: '⁷', swipe_down: '₇', hint: '₇'}
+      - {click: Num_8, has_menu: '{space}8', long_click: '⁸', swipe_up: '⁸', swipe_down: '₈', hint: '₈'}
+      - {click: Num_9, has_menu: '{space}9', long_click: '⁹', swipe_up: '⁹', swipe_down: '₉', hint: '₉'}
+      - {click: Num_0, has_menu: '{space}0', long_click: '⁰', swipe_up: '⁰', swipe_down: '₀', hint: '₀'}
       #第二行
       - {click: 'q', long_click: '`'}
       - {click: 'w', long_click: '|', swipe_left: '<', swipe_right: '>', hint: '<   >'}
