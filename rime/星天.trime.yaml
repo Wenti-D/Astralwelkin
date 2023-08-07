@@ -346,7 +346,7 @@ preset_keys:
   # rime状态
   Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中文, 西文 ]}
   Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半角, 全角 ]}
-  Henkan: {toggle: simplification, send: Mode_switch, states: [ 汉字, 汉字 ]}
+  Henkan: {toggle: simplification, send: Mode_switch, states: [ 漢字, 汉字 ]}
   Charset_switch: {toggle: extended_charset, send: Mode_switch, states: [ 常用, 增广 ]}
   Punct_switch: {toggle: ascii_punct, send: Mode_switch, states: [ 。，, ．， ]}
   # trime设定
