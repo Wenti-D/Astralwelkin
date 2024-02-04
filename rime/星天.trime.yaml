@@ -207,6 +207,7 @@ preset_color_schemes:
   default:
     name: "星天"
     author: "Windy_D"
+    light_scheme: white_night
     #悬浮窗颜色
     border_color: *dark_border_color                        #悬浮窗边框
     label_color: *dark_sub_candidate_color                  #编码高亮
@@ -251,6 +252,7 @@ preset_color_schemes:
   white_night:
     name: "白夜"
     author: "Windy_D"
+    dark_scheme: default
     #悬浮窗颜色
     border_color: *light_border_color                        #悬浮窗边框
     label_color: *light_sub_candidate_color                  #编码高亮
