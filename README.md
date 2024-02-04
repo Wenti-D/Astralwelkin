@@ -95,4 +95,4 @@
 
 ### 3. 我有问题（建议）怎么办？
 
-可以提个 issue 或者发个邮件。
+先看看[这里](https://github.com/Wenti-D/Astralwelkin/issues/2)有没有你遇到的问题，如果没有就可以提个 issue 或者发个邮件。
