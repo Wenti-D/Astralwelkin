@@ -807,7 +807,7 @@ preset_keyboards:
       - {click: Menu, composing: 'Transform', long_click: IME_switch}
       - {click: 'wa', label: わ, swipe_left: wo, swipe_up: nn, swipe_right: '--', swipe_down: ～}
       - {click: 、, swipe_left: 。, swipe_up: ？, swipe_right: ！, swipe_down: …}
-      - {click: Return, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   japanese_num_12_key:
     name: 日文数字12键
@@ -843,7 +843,7 @@ preset_keyboards:
       - {click: JapaneseNumBracket, swipe_left: ')', swipe_up: '[', swipe_right: ']'}
       - {click: '0', swipe_left: 〜, swipe_up: …, hint: '〜…'}
       - {click: JapaneseNumComma, swipe_left: '.', swipe_up: '-', swipe_right: '/'}
-      - {click: Return, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   number:
     name: 数字小键盘
@@ -878,7 +878,7 @@ preset_keyboards:
       - {click: '_'}
       - {click: '0'}
       - {click: '.'}
-      - {click: Return, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   basic_symbol:
     name: 基本符号键盘
