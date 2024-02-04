@@ -97,6 +97,15 @@ style:
   keyboard_padding_land: 50       #横屏下键盘左右到屏幕左右间距
   keyboard_padding_land_bottom: 5 #横屏下键盘下端到屏幕下缘间距
   keyboard_height_land: 160       #横屏下键盘锁定高度
+  enter_label_mode: 0             #回车键标签模式：0 自定义 | 1 仅ActionLabel | 2 ActionLabel优先 | 3 ActionLabel后备
+  enter_labels:                   #自定义回车键标签
+    default: ↲
+    done: ✓
+    search: 🔍
+    pre: ⇐
+    next: ⇒
+    send: ➤
+    go: ➤
   #悬浮窗口
   layout:
     position: fixed             #候选窗口位置
@@ -316,7 +325,7 @@ preset_keys:
   VOLUME_MUTE: {label: 静音, send: VOLUME_MUTE}
   # 编辑
   Shift_L: {label: '⇧', key_text_size: 26, send: Shift_L, shift_lock: long}
-  Return: {label: '↵', repeatable: true, text: "{Return}{Eisu_toggle}"}
+  Return: {label: enter_labels, repeatable: true, text: "{Return}{Eisu_toggle}", functional: false}
   Hide: {label: 隐藏, send: BACK}
   BackSpace: {label: '⇦', repeatable: true, send: BackSpace}
   space: {label: '⎵', repeatable: true, functional: false, send: space}
@@ -570,7 +579,7 @@ preset_keyboards:
       - {click: ',', label: ，, long_click: Extra_keyboard}
       - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
       - {click: '.', label: 。, long_click: '……'}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   letter:
     name: 西文36键
@@ -633,7 +642,7 @@ preset_keyboards:
       - {click: ',', long_click: Extra_keyboard}
       - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
       - {click: '.', long_click: '…'}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   double_pinyin_mspy:
     name: 微软双拼键盘
@@ -695,7 +704,7 @@ preset_keyboards:
       - {click: ',', label: ，, long_click: Extra_keyboard}
       - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
       - {click: 。, long_click: '……', swipe_right: '、', hint: '    、'}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   bopomofo:
     name: 注音键盘
@@ -1020,7 +1029,7 @@ preset_keyboards:
       - {click: ',', long_click: '«'}
       - {click: space, width: 50, swipe_left: "Left", swipe_right: "Right"}
       - {click: '.', long_click: '»'}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
       #第五行
       - {width: 10}
       - {click: Keyboard_default, width: 20, height: *sub_key_height}
@@ -1075,7 +1084,7 @@ preset_keyboards:
       - {click: ',', long_click: '«'}
       - {click: space, width: 50, swipe_left: "Left", swipe_right: "Right"}
       - {click: '.', long_click: '»'}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
       #第五行
       - {width: 10}
       - {click: Keyboard_default, width: 20, height: *sub_key_height}
@@ -1140,7 +1149,7 @@ preset_keyboards:
       - {click: ',', width: 10}
       - {click: space, width: 50, swipe_left: "Left", swipe_right: "Right"}
       - {click: '.', width: 10}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
       #第五行
       - {width: 10}
       - {click: Keyboard_default, width: 20, height: *sub_key_height}
@@ -1195,7 +1204,7 @@ preset_keyboards:
       - {click: ',', width: 10}
       - {click: space, width: 50, swipe_left: "Left", swipe_right: "Right"}
       - {click: '.', width: 10}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
       #第五行
       - {width: 10}
       - {click: Keyboard_default, width: 20, height: *sub_key_height}
@@ -1287,7 +1296,7 @@ preset_keyboards:
       - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
       - {click: IPA_aspirated, width: 10}
       - {click: '.', width: 10}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
       #第七行
       - {width: 10}
       - {click: Keyboard_default, width: 20, height: *sub_key_height}
@@ -1374,7 +1383,7 @@ preset_keyboards:
       - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
       - {click: IPA_aspirated, width: 10}
       - {click: '.', width: 10}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
       #第七行
       - {width: 10}
       - {click: Keyboard_default, width: 20, height: *sub_key_height}
@@ -1466,7 +1475,7 @@ preset_keyboards:
       - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
       - {click: IPA_aspirated, width: 10}
       - {click: '.', width: 10}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
       #第七行
       - {width: 10}
       - {click: Keyboard_default, width: 20, height: *sub_key_height}
@@ -1521,7 +1530,7 @@ preset_keyboards:
       - {click: ','}
       - {click: space, width: 50, swipe_left: "Left", swipe_right: "Right"}
       - {click: '.'}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
       #第五行
       - {width: 10}
       - {click: Keyboard_default, width: 20, height: *sub_key_height}
@@ -1576,7 +1585,7 @@ preset_keyboards:
       - {click: IPA_tie_bar_above, width: 12.5}
       - {click: space, width: 45, swipe_left: "Left", swipe_right: "Right"}
       - {click: IPA_tie_bar_below, width: 12.5}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10,  key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
       #第五行
       - {width: 10}
       - {click: Keyboard_default, width: 20, height: *sub_key_height}
