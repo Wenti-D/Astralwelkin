@@ -430,9 +430,9 @@ preset_keys:
   Keyboard_Cyrillic: {label: 'абг', send: Eisu_toggle, select: Cyrillic}
   Keyboard_Cyrillic_symbol: {label: '+★✓', send: Eisu_toggle, select: Cyrillic_symbol}
   Keyboard_IPA: {label: 'ɑɔə', send: Eisu_toggle, select: IPA1}
-  Keyboard_Greek_Selected: {label: 'αβγ', send: ''}
-  Keyboard_Cyrillic_Selected: {label: 'абг', send: ''}
-  Keyboard_IPA_Selected: {label: 'ɑɔə', send: ''}
+  Keyboard_Greek_Selected: {label: 'αβγ', send: '', functional: false}
+  Keyboard_Cyrillic_Selected: {label: 'абг', send: '', functional: false}
+  Keyboard_IPA_Selected: {label: 'ɑɔə', send: '', functional: false}
   Keyboard_IPA1: {label: '3/3', send: Eisu_toggle, select: IPA1}
   Keyboard_IPA2: {label: '1/3', send: Eisu_toggle, select: IPA2}
   Keyboard_IPA3: {label: '2/3', send: Eisu_toggle, select: IPA3}
@@ -929,7 +929,7 @@ preset_keyboards:
       - {click: '‹', long_click: '«'}
       - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
       - {click: '›', long_click: '»'}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   math_symbol:
     name: 数学符号键盘
@@ -980,7 +980,7 @@ preset_keyboards:
       - {click: '≪', key_text_size: 16}
       - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
       - {click: '≫', key_text_size: 16}
-      - {click: Return, width: 15, key_text_size: 48, key_text_offset_y: -10, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
+      - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   Greek:
     name: 希腊字母键盘
