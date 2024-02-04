@@ -33,7 +33,10 @@
 
 ### 下载用到的字体
 
-本主题所用的主要字体是 Noto Sans CJK SC，可以在 [Google Fonts](https://fonts.google.com/noto/specimen/Noto+Sans+SC) 下载到；扩展字体是遍黑体 P1 allideo，可以前往其[项目地址](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project)下载。
+本主题所用的主要字体是 MiSans Regular，可以在[它的官网](https://hyperos.mi.com/font/zh/download/)下载到；扩展字体是遍黑体 P1 allideo，可以前往其[项目地址](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project)下载。
+
+> 之前本主题使用的是思源黑体，但实测思源系列字体（包括其衍生版）会让候选列表行距巨大，迫不得已改用 MiSans。
+> 为什么不用 HarmonyOS Sans 呢？因为官方放出来的版本只有 BMP（U+0000 至 U+FFFF）范围，对我来说显然不够用。
 
 ### 将它放到你的设备上
 
