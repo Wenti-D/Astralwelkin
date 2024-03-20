@@ -1,7 +1,7 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: "20240204@3.2.17" #日期@Trime版本
+config_version: "20240320@3.2.17" #日期@Trime版本
 name: 星天                        #方案名称
 author: 'Windy_D'                 #作者信息
 
@@ -893,7 +893,7 @@ preset_keyboards:
     keys:
       #第一行
       - {click: '~'}
-      - {click: '↑', long_click: '⇑'}
+      - {click: '↑', long_click: '⇑', swipe_left: ↖, swipe_right: '↗', hint: '↖   ↗'}
       - {click: '№', swipe_left: '₹', swipe_right: '₱', hint: '₹   ₱'}
       - {click: '♪'}
       - {click: '¶', long_click: '§'}
@@ -904,7 +904,7 @@ preset_keyboards:
       - {click: '√', key_text_size: 16, long_click: '∛', swipe_down: '∜', hint: '∜'}
       #第二行
       - {click: '←', long_click: '⇐'}
-      - {click: '↓', long_click: '⇓'}
+      - {click: '↓', long_click: '⇓', swipe_left: ↙, swipe_right: '↘', hint: '↙   ↘'}
       - {click: '→', long_click: '⇒'}
       - {click: '•', swipe_left: '„', swipe_right: '‚', hint: '„   ‚'}
       - {click: '★', key_text_size: 16, swipe_left: '‡', swipe_right: '†', hint: '‡   †'}
