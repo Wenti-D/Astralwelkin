@@ -325,7 +325,7 @@ preset_keys:
   VOLUME_MUTE: {label: 静音, send: VOLUME_MUTE}
   # 编辑
   Shift_L: {label: '⇧', key_text_size: 26, send: Shift_L, shift_lock: long}
-  Return: {label: enter_labels, repeatable: true, text: "{Return}{Eisu_toggle}", functional: false}
+  Return: {label: enter_labels, repeatable: true, send: Return, functional: false}
   Hide: {label: 隐藏, send: BACK}
   BackSpace: {label: '⇦', repeatable: true, send: BackSpace}
   space: {label: '⎵', repeatable: true, functional: false, send: space}
@@ -490,7 +490,8 @@ preset_keys:
   IPA_rhoticity: {label: '◌˞', text: '˞', functional: false}
   IPA_tie_bar_above: {label: '◌͡◌', text: '͡', functional: false}
   IPA_tie_bar_below: {label: '◌͜◌', text: '͜', functional: false}
-  Keyboard_clipboard: {label: '剪贴板', send: function, command: liquid_keyboard, option: '剪贴板'}
+  Keyboard_clipboard: {label: 剪贴板, send: function, command: liquid_keyboard, option: "剪贴板"}
+  Keyboard_candidate: {label: '候选', send: function, command: liquid_keyboard, option: '候选'}
 
 liquid_keyboard:
   author: 'Windy_D'
@@ -567,7 +568,7 @@ preset_keyboards:
       - {click: Shift_L, width: 15, key_text_offset_y: 0}
       - {click: 'z', long_click: '^_^'}
       - {click: 'x', long_click: cut}
-      - {click: 'c', long_click: copy}
+      - {click: 'c', long_click: copy, swipe_down: Keyboard_candidate, hint: '候选'}
       - {click: 'v', long_click: paste, swipe_down: Keyboard_clipboard, hint: '剪贴板'}
       - {click: 'b', long_click: '&', swipe_left: "'", swipe_right: '"', hint: "'   \""}
       - {click: 'n', long_click: '%', swipe_left: ';', swipe_right: ':', hint: ';   :'}
@@ -692,7 +693,7 @@ preset_keyboards:
       - {click: Shift_L, width: 15, key_text_offset_y: 0}
       - {click: 'z', long_click: '^_^'}
       - {click: 'x', long_click: cut}
-      - {click: 'c', long_click: copy}
+      - {click: 'c', long_click: copy, swipe_down: Keyboard_candidate, hint: '候选'}
       - {click: 'v', long_click: paste, swipe_down: Keyboard_clipboard, hint: '剪贴板'}
       - {click: 'b', long_click: '&', swipe_left: "'", swipe_right: '"', hint: "'   \""}
       - {click: 'n', long_click: '%', swipe_left: ';', swipe_right: ':', hint: ';   :'}
