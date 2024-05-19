@@ -1,7 +1,7 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: "20240320@3.2.17" #日期@Trime版本
+config_version: "20240519@3.2.18" #日期@Trime版本
 name: 星天                        #方案名称
 author: 'Windy_D'                 #作者信息
 
@@ -492,6 +492,12 @@ preset_keys:
   IPA_tie_bar_below: {label: '◌͜◌', text: '͜', functional: false}
   Keyboard_clipboard: {label: 剪贴板, send: function, command: liquid_keyboard, option: "剪贴板"}
   Keyboard_candidate: {label: '候选', send: function, command: liquid_keyboard, option: '候选'}
+  Liquid_fixed_exit: {label: ' ↶ ', send: function, command: liquid_keyboard, option: "-1"}
+  Liquid_fixed_backspace: {label: ' ⇦ ', repeatable: true, send: BackSpace}
+  Liquid_fixed_space: {label: '  ⎵ ', repeatable: true, functional: false, send: space}
+  Liquid_fixed_pgup: {label: '  ⤒  ', send: Page_Up}
+  Liquid_fixed_pgdn: {label: '  ⤓  ', send: Page_Down}
+  Liquid_fixed_return: {label: '  ↲  ', repeatable: true, send: Return, functional: false}
 
 liquid_keyboard:
   author: 'Windy_D'
@@ -502,20 +508,22 @@ liquid_keyboard:
   single_width: 60    #single类型的按键宽度
   vertical_gap: 4     #纵向按键间隙
   margin_x: 2         #横向按键间隙的一半
-  keyboards:
-    - exit
-    - candidate
-    - clipboard
+  fixed_key_bar:
+    position: right
+    keys:
+      - Liquid_fixed_exit
+      - Liquid_fixed_backspace
+      - Liquid_fixed_space
+      - Liquid_fixed_pgup
+      - Liquid_fixed_pgdn
+      - Liquid_fixed_return
+  keyboards: [ candidate, clipboard ]
   clipboard:
-    type: CLIPBOARD
     name: 剪贴板
+    type: CLIPBOARD
   candidate:
-    type: CANDIDATE
     name: 候选
-  exit:
-    type: NO_KEY
-    name: 返回
-    keys: EXIT
+    type: CANDIDATE
 
 #键盘布局
 preset_keyboards:
