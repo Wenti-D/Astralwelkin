@@ -1,32 +1,32 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: "20240905@3.3.0"  #日期@Trime版本
+config_version: "20240906@3.3.0"  #日期@Trime版本
 name: 星天                        #方案名称
 author: 'Windy_D'                 #作者信息
 
 height:
-  1: &36_key_height 42
-  2: &symbol_key_height 36
-  3: &sub_key_height 28
-  4: &hor_gap 4
-  5: &36_key_vert_gap 6
-  6: &ipa_key_height 36
-  7: &ipa_key_width 8.33333333333333
-  12: &ipa_2_key_width 16.666666666666666
-  13: &ipa_3_key_width 25
-  8: &jpn_key_height 48
-  9: &26_key_height 44
-  10: &26_key_vert_gap 9
-  11: &ipa_key_vert_gap 2
+  - &36_key_height 42
+  - &symbol_key_height 36
+  - &sub_key_height 28
+  - &hor_gap 4
+  - &36_key_vert_gap 6
+  - &ipa_key_height 36
+  - &ipa_key_width 8.33333333333333
+  - &ipa_2_key_width 16.666666666666666
+  - &ipa_3_key_width 25
+  - &jpn_key_height 48
+  - &26_key_height 44
+  - &26_key_vert_gap 9
+  - &ipa_key_vert_gap 2
 
 round_corner:
-  1: &main_round 12
-  2: &sub_round 6
+  - &main_round 12
+  - &sub_round 6
 
 shift:
-  1: &upper_hint_shift 0 #按键上部提示偏移
-  2: &lower_hint_shift 0 #按键下部提示偏移
+  - &upper_hint_shift 0 #按键上部提示偏移
+  - &lower_hint_shift 0 #按键下部提示偏移
 
 #样式
 style:
