@@ -1,7 +1,7 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: "20240906@3.3.0"  #日期@Trime版本
+config_version: "20241109@3.3.1"  #日期@Trime版本
 name: 星天                        #方案名称
 author: 'Windy_D'                 #作者信息
 
@@ -2444,13 +2444,13 @@ preset_keyboards:
       - {click: 'q', long_click: '`'}
       - {click: 'w', long_click: '|', swipe_left: '<', swipe_right: '>', hint: '<   >'}
       - {click: 'e', long_click: '@', swipe_left: '⟨', swipe_right: '⟩', hint: '⟨   ⟩'}
-      - {click: 'r', long_click: '^'}
+      - {click: 'r', long_click: '^', swipe_left: '【', swipe_right: '】', hint: '【   】'}
       - {click: 't', long_click: '·'}
       - {click: 'y', long_click: '*', swipe_left: '/', swipe_right: '\', hint: '/   \'}
       - {click: 'u', long_click: '+', swipe_left: '{', swipe_right: '}', hint: '{   }'}
       - {click: 'i', long_click: '×', swipe_left: '[', swipe_right: ']', hint: '[   ]'}
       - {click: 'o', long_click: '=', swipe_left: '(', swipe_right: ')', hint: '(   )'}
-      - {click: 'p', long_click: '、'}
+      - {click: 'p', long_click: {commit: '.'}}
       #第三行
       - {width: 5}
       - {click: 'a', long_click: 'select_all'}
@@ -2478,7 +2478,7 @@ preset_keyboards:
       - {click: Menu, width: 12.5, key_text_offset_y: 0, long_click: IME_switch}
       - {click: ',', label: ，, long_click: Extra_keyboard}
       - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
-      - {click: '.', label: 。, long_click: '……'}
+      - {click: '.', label: 。, long_click: '……', swipe_left: '々', swipe_right: '、', hint: '々   、'}
       - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   letter:
@@ -2513,7 +2513,7 @@ preset_keyboards:
       - {click: 'u', long_click: '=', swipe_left: '/', swipe_right: '\', hint: '/   \'}
       - {click: 'i', long_click: '+', swipe_left: '<', swipe_right: '>', hint: '<   >'}
       - {click: 'o', long_click: '×', swipe_left: '{', swipe_right: '}', hint: '{   }'}
-      - {click: 'p', long_click: '\'}
+      - {click: 'p', long_click: {commit: '.'}}
       #第三行
       - {width: 5}
       - {click: 'a', long_click: 'select_all'}
@@ -2570,13 +2570,13 @@ preset_keyboards:
       - {click: 'q', long_click: '`'}
       - {click: 'w', long_click: '|', swipe_left: '<', swipe_right: '>', hint: '<   >'}
       - {click: 'e', long_click: '@', swipe_left: '⟨', swipe_right: '⟩', hint: '⟨   ⟩'}
-      - {click: 'r', long_click: '^'}
+      - {click: 'r', long_click: '^', swipe_left: '【', swipe_right: '】', hint: '【   】'}
       - {click: 't', long_click: '·'}
       - {click: 'y', long_click: '*', swipe_left: '/', swipe_right: '\', hint: '/   \'}
       - {click: 'u', long_click: '+', swipe_left: '{', swipe_right: '}', hint: '{   }'}
       - {click: 'i', long_click: '×', swipe_left: '[', swipe_right: ']', hint: '[   ]'}
       - {click: 'o', long_click: '=', swipe_left: '(', swipe_right: ')', hint: '(   )'}
-      - {click: 'p', long_click: '.'}
+      - {click: 'p', long_click: {commit: '.'}}
       #第三行
       - {click: 'a', long_click: select_all}
       - {click: 's', long_click: '#', swipe_left: '℃', swipe_right: '℉', hint: '℃   ℉'}
@@ -2603,7 +2603,7 @@ preset_keyboards:
       - {click: Menu, width: 12.5, key_text_offset_y: 0, long_click: IME_switch}
       - {click: ',', label: ，, long_click: Extra_keyboard}
       - {click: space, width: 40, swipe_left: "Left", swipe_right: "Right"}
-      - {click: 。, long_click: '……', swipe_right: '、', hint: '    、'}
+      - {click: '.', label: 。, long_click: '……', swipe_left: '々', swipe_right: '、', hint: '々   、'}
       - {click: Return, width: 15, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
   bopomofo:
