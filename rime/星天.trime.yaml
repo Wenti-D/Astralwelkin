@@ -1,9 +1,9 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: "20241109@3.3.1"  #日期@Trime版本
-name: 星天                        #方案名称
-author: 'Windy_D'                 #作者信息
+config_version: '20241109@3.3.1'          #日期@Trime版本
+name: 星天                                #方案名称
+author: 'Windy_D <windy0deng@gmail.com>'  #作者信息
 
 height:
   - &36_key_height 42
