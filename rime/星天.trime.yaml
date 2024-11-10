@@ -2673,7 +2673,7 @@ preset_keyboards:
 
   japanese_kana:
     name: 日文12键假名
-    __include: pereset_keyboards/japanese_12_key
+    __include: preset_keyboards/japanese_12_key
 
   japanese_12_key:
     name: 日文12键
