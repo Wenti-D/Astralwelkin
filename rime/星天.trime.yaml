@@ -1,8 +1,8 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: '20241109@3.3.1'          #日期@Trime版本
-name: 星天                                #方案名称
+config_version: '20241110@3.3.1'          #日期@Trime版本
+name: 星天 Test                           #方案名称
 author: 'Windy_D <windy0deng@gmail.com>'  #作者信息
 
 height:
@@ -2671,6 +2671,10 @@ preset_keyboards:
     - {click: BackSpace, key_text_offset_y: 0}
     - {click: Return, key_text_size: 42, key_text_offset_y: -8, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
+  japanese_kana:
+    name: 日文12键假名
+    __include: pereset_keyboards/japanese_12_key
+
   japanese_12_key:
     name: 日文12键
     author: 'Windy_D'
@@ -2685,28 +2689,26 @@ preset_keyboards:
     keys:
       #第一行
       - {click: undo, long_click: redo}
-      #为什么用 q 呢？答案是避免重码
-      #事实上这配套方案包括了许多奇怪的码
-      - {click: 'qa', label: あ, swipe_left: qi, swipe_up: qu, swipe_right: qe, swipe_down: qo}
-      - {click: 'ka', label: か, swipe_left: ki, swipe_up: ku, swipe_right: ke, swipe_down: ko}
-      - {click: 'sa', label: さ, swipe_left: si, swipe_up: su, swipe_right: se, swipe_down: so}
+      - {click: あ, swipe_left: い, swipe_up: う, swipe_right: え, swipe_down: お}
+      - {click: か, swipe_left: き, swipe_up: く, swipe_right: け, swipe_down: こ}
+      - {click: さ, swipe_left: し, swipe_up: す, swipe_right: せ, swipe_down: そ}
       - {click: BackSpace}
       #第二行
       - {click: JapaneseNum}
-      - {click: 'ta', label: た, swipe_left: ti, swipe_up: tu, swipe_right: te, swipe_down: to}
-      - {click: 'na', label: な, swipe_left: ni, swipe_up: nu, swipe_right: ne, swipe_down: 'no'}
-      - {click: 'ha', label: は, swipe_left: hi, swipe_up: hu, swipe_right: he, swipe_down: ho}
+      - {click: た, swipe_left: ち, swipe_up: つ, swipe_right: て, swipe_down: と}
+      - {click: な, swipe_left: に, swipe_up: ぬ, swipe_right: ね, swipe_down: の}
+      - {click: は, swipe_left: ひ, swipe_up: ふ, swipe_right: へ, swipe_down: ほ}
       - {click: '', label: '^_^'}
       #第三行
       - {click: Pigeon, long_click: Theme_settings}
-      - {click: 'ma', label: ま, swipe_left: mi, swipe_up: mu, swipe_right: me, swipe_down: mo}
-      - {click: 'ya', label: や, swipe_left: 「, swipe_up: yu, swipe_right: 」, swipe_down: yo}
-      - {click: 'ra', label: ら, swipe_left: ri, swipe_up: ru, swipe_right: re, swipe_down: ro}
+      - {click: ま, swipe_left: み, swipe_up: む, swipe_right: め, swipe_down: も}
+      - {click: や, swipe_left: 「, swipe_up: ゆ, swipe_right: 」, swipe_down: よ}
+      - {click: ら, swipe_left: り, swipe_up: る, swipe_right: れ, swipe_down: ろ}
       - {click: space}
       #第四行
       - {click: Keyboard_clipboard}
       - {click: Menu, composing: 'Transform', long_click: IME_switch}
-      - {click: 'wa', label: わ, swipe_left: wo, swipe_up: nn, swipe_right: '--', swipe_down: ～}
+      - {click: わ, swipe_left: を, swipe_up: ん, swipe_right: ー, swipe_down: ～}
       - {click: 、, swipe_left: 。, swipe_up: ？, swipe_right: ！, swipe_down: …}
       - {click: Return, key_text_size: 24, key_text_offset_y: -2, key_back_color: enter_bg_color, key_text_color: enter_text_color, hilited_key_back_color: enter_pressed_bg_color, hilited_key_text_color: enter_pressed_text_color}
 
