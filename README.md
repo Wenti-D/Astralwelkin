@@ -33,7 +33,10 @@
 
 ### 下载用到的字体
 
-本主题所用的主要字体是 Noto Sans CJK SC，可以在 [Google Fonts](https://fonts.google.com/noto/specimen/Noto+Sans+SC) 下载到；扩展字体是 SimSun Ext-B，在 Windows 系统的电脑上就可以找到。
+本主题所用的主要字体是 MiSans Regular，可以在[它的官网](https://hyperos.mi.com/font/zh/download/)下载到；扩展字体是遍黑体 P1 allideo，可以前往其[项目地址](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project)下载。
+
+> 之前本主题使用的是思源黑体，但实测思源系列字体（包括其衍生版）会让候选列表行距巨大，迫不得已改用 MiSans。
+> 为什么不用 HarmonyOS Sans 呢？因为官方放出来的版本只有 BMP（U+0000 至 U+FFFF）范围，对我来说显然不够用。
 
 ### 将它放到你的设备上
 
@@ -85,7 +88,7 @@
 
 ### 1. 键盘上面的「摆烂」「鸽了」是什么？
 
-前者是还没想好放什么，后者是想好了但还没实现。欢迎提出建议！
+还没想好放什么 ~~（想好了也忘了）~~ ，欢迎提出建议！
 
 ### 2. 为什么没有 XXX？
 
@@ -93,4 +96,4 @@
 
 ### 3. 我有问题（建议）怎么办？
 
-可以提个 issue 或者发个邮件。
+先看看[这里](https://github.com/Wenti-D/Astralwelkin/issues/2)有没有你遇到的问题，如果没有就可以提个 issue 或者发个邮件。

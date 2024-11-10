@@ -4,7 +4,7 @@
 schema:
   schema_id: japanese_12_key
   name: 日本語12キー
-  version: '0.1'
+  version: '0.2'
   author:
     - "Windy_D <windy0deng@gmail.com>"
 
@@ -45,7 +45,7 @@ engine:
     - uniquifier
 
 speller:
-  alphabet: 'あabcdefghijklmnopqrstuvwxyz-_'
+  alphabet: 'abcdefghijklmnopqrstuvwxyz-'
   initials: 'qkstnhmyrwvgzdbplx'
   delimiter: " '"
   algebra:

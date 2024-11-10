@@ -3,7 +3,7 @@
 
 ---
 name: japanese_12_key
-version: '0.1'
+version: '0.2'
 
 use_preset_vocabulary: false
 import_tables:
@@ -11,7 +11,8 @@ import_tables:
   - 'japanese.katakana'
   - 'japanese.edict'
   - 'japanese.enamdict'
-  - 'japanese.mozc'
+  # 默认禁用 mozc 词典，这玩意太大了
+  # - 'japanese.mozc'
   - 'japanese.half_width_kana'
 ...
 
