@@ -16,7 +16,7 @@
   - `星天.trime.yaml`：主题本体
   - `bopomofo.custopm.yaml`：用于注音的配套设置
   - `double_pinyin_mspy.custom.yaml`：用于 RIME 自带的微软双拼的配套设置
-  - `double_pinyin_mspy.custom.yaml`：用于[雾凇拼音](https://dvel.me/posts/rime-ice/)的搜狗双拼的配套设置
+  - `double_pinyin_sogou.custom.yaml`：用于[雾凇拼音](https://dvel.me/posts/rime-ice/)的搜狗双拼的配套设置
   - `japanese_12_key.dict.yaml`：日文十二键用词库
   - `japanese_12_key.schema.yaml`：日文十二键输入方案
   - `japanese.dict.7z`：日文子词库压缩包
