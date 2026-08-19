@@ -20,7 +20,7 @@ switches:
 
 engine:
   processors:
-    - lua_processor@japanese_processor
+    - lua_processor@*jp_12_key/processor
     - ascii_composer
     - recognizer
     - key_binder
@@ -30,7 +30,7 @@ engine:
     - navigator
     - express_editor
   segmentors:
-    - lua_segmentor@japanese_segmentor
+    - lua_segmentor@*jp_12_key/segmentor
     - ascii_segmentor
     - matcher
     - abc_segmentor

@@ -6,6 +6,8 @@
 
 （甚至附带了一个全是 bug 的日文十二键输入法。）
 
+当前适配同文输入法 3.3.11。
+
 ## 这里有什么？
 
 - `tools`：处理词典所用脚本
@@ -13,30 +15,31 @@
   - `lua`：lua 脚本文件夹（目前里面只有日文用的）
   - `星天.trime.yaml`：主题本体
   - `bopomofo.custopm.yaml`：用于注音的配套设置
-  - `double_pinyin_mspy.custom.yaml`：用于微软双拼的配套设置
+  - `double_pinyin_mspy.custom.yaml`：用于 RIME 自带的微软双拼的配套设置
+  - `double_pinyin_mspy.custom.yaml`：用于[雾凇拼音](https://dvel.me/posts/rime-ice/)的搜狗双拼的配套设置
   - `japanese_12_key.dict.yaml`：日文十二键用词库
   - `japanese_12_key.schema.yaml`：日文十二键输入方案
   - `japanese.dict.7z`：日文子词库压缩包
   - `luna_pinyin.custom.yaml`：用于朙月拼音的配套设置
-  - `rime.lua`：Rime 输入法用到的 lua 脚本
 - `dict_source.7z`：日文词典源文件与处理后的词库
 
 ## 长什么样？
 
-<img src="README_assets/Screenshot_20220619_200033.jpg" width=500>
+<img src="README_assets/1.jpg" width=500>
 
-<img src="README_assets/Screenshot_20220619_200058.jpg" width=500>
+<img src="README_assets/2.jpg" width=500>
 
-<img src="README_assets/Screenshot_20220619_200108.jpg" width=500>
+<img src="README_assets/3.jpg" width=500>
+
+<img src="README_assets/4.jpg" width=500>
+
+<img src="README_assets/5.jpg" width=500>
 
 ## 怎么用？
 
 ### 下载用到的字体
 
-本主题所用的主要字体是 MiSans Regular，可以在[它的官网](https://hyperos.mi.com/font/zh/download/)下载到；扩展字体是遍黑体 P1 allideo，可以前往其[项目地址](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project)下载。
-
-> 之前本主题使用的是思源黑体，但实测思源系列字体（包括其衍生版）会让候选列表行距巨大，迫不得已改用 MiSans。
-> 为什么不用 HarmonyOS Sans 呢？因为官方放出来的版本只有 BMP（U+0000 至 U+FFFF）范围，对我来说显然不够用。
+本主题所用的主要字体是鸿蒙黑体，可以在[它的官网](https://developer.huawei.com/consumer/cn/design/resource/)下载到；扩展字体是遍黑体 P1 和 P2（独立 OTF 版），可以前往其[项目地址](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project)下载。
 
 ### 将它放到你的设备上
 
@@ -72,7 +75,7 @@
 ### 主题本体
 
 - [ ] 增加颜文字输入键盘（对应现在没有作用的「^_^」键）；
-- [ ] 增加更多符号输入（例如 emoji，对应现在的「鸽了」）；
+- [x] 增加更多符号输入（例如 emoji，对应现在的「鸽了」）；
 - [ ] （若有需要）增加不同种类输入法的键盘。
 
 ### 日文输入法

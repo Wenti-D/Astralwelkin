@@ -1,41 +1,46 @@
-# double_pinyin_mspy.custom.yaml
+# double_pinyin_sogou.custom.yaml
 #
 # 补丁功能：
-#   将词库修改为朙月拼音扩充词库
 #   自定义输入法开关
 #   自定义标点符号
 #
 # 作者：Windy_D <windy0deng@gmail.com>
-# 时间：20240906
-# 同文版本：3.3.0
+# 时间：20260819
+# 同文版本：3.3.11
 #
 #
 # 注：
-#   本补丁适用于 RIME 自带的各种双拼方案（包括自然码双拼、智能ABC双拼、小鹤双拼、MSPY双拼）。
+#   本补丁适配雾凇拼音的各种双拼方案（包括自然码双拼、智能ABC双拼、小鹤双拼、MSPY双拼）。
+#   雾凇拼音详见 https://dvel.me/posts/rime-ice/
 #   放入 RIME 的用户文件夹，重新部署即生效，建议配合作者制作的主题食用。
 #   欲用于其余方案，只需将 custom.yaml 之前改为对应的输入方案名称，
 #   如 double_pinyin_abc.custom.yaml，然后放入用户文件夹重新部署即可。
-#   朙月拼音用户请使用 luna_pinyin.custom.yaml。
 #
 #   输入方案      id
 #   自然码双拼    double_pinyin
 #   智能ABC双拼   double_pinyin_abc
 #   小鹤双拼      double_pinyin_flypy
+#   搜狗双拼      double_pinyin_sogou
 #   MSPY双拼      double_pinyin_mspy
 #
 
 patch:
-  "translator/dictionary": luna_pinyin.extended
   switches:
     - name: ascii_mode
-      states: [ ' 中 ', ' Ａ ' ]
+      states: [ 中, Ａ ]
       reset: 0
-    - name: simplification
-      states: [ ' 繁 ', ' 简 ' ]
+    - name: traditionalization
+      states: [ 简, 繁 ]
+      reset: 0
+    - name: emoji
+      states: [ 🚫, 😄 ]
       reset: 1
     - name: full_shape
-      states: [ ' 半 ', ' 全 ' ]
+      states: [ 半, 全 ]
       reset: 0
+    - name: search_single_char  # search.lua 的功能开关，辅码查词时是否单字优先
+      states: [ 词 , 字 ]
+      abbrev: [ 词 , 字 ]
   punctuator:
     full_shape:
       ' ': { commit: '　' }
